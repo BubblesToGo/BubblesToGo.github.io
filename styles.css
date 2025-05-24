@@ -19,7 +19,7 @@ a:hover {
 
 /* Welcome Section */
 #welcome {
-  padding: 100px 20px 60px;
+  padding: 100px 20px 40px;
   background-color: #0e0e0e;
   text-align: center;
 }
@@ -31,7 +31,7 @@ a:hover {
 }
 
 #welcome .main-logo {
-  width: 200px;
+  width: 120px;
   max-width: 80%;
   margin: 20px 0;
 }
@@ -40,11 +40,20 @@ a:hover {
   font-size: 1.2em;
   color: #ccc;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
   line-height: 1.6;
 }
 
-/* Section Divider */
+#welcome .section-divider {
+  height: 4px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border-radius: 2px;
+}
+
+/* Section Divider (reusable) */
 .section-divider {
   height: 4px;
   width: 100%;
