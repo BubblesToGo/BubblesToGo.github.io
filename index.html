@@ -1,9 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bubbles Kitpvp | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="logo.png" alt="Server Logo" class="logo"/>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#join">Join</a></li>
+        <li><a href="#discord">Discord</a></li>
+        <li><a href="#donate">Donate</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Welcome to Bubbles Kitpvp</h1>
+    <p>A Minecraft server focused on community, creativity, and fun.</p>
+    <a href="#join" class="btn">Join Now</a>
+  </section>
+
+  <section id="reviews">
+    <h2>Player Reviews</h2>
+    <div id="quoteBox" class="quote-box">Loading reviews...</div>
+  </section>
+
+  <section id="join">
+    <h2>Join the Adventure</h2>
+    <p>Server IP: <strong>play.bubblespvp.net</strong></p>
+    <p>Port: <strong>19132</strong></p>
+    <a href="#discord" class="btn">Join Our Discord</a>
+  </section>
+
 <section id="discord">
   <h2>Join Our Discord Community</h2>
   <div class="discord-box">
     <h3>Fully Integrated & Reliable Platform</h3>
     <ul>
-      <li>✓ Meet other CrabsSMP Members</li>
+      <li>✓ Meet other Bubbles Kitpvp Members</li>
       <li>✓ Real-time Realm chat integration</li>
       <li>✓ Instant update notifications</li>
       <li>✓ Help shape our growing community</li>
@@ -16,3 +56,48 @@
     <div class="reconnect">Already a member? <a href="https://discord.gg/bubbleskitpvp">Click to reconnect</a></div>
   </div>
 </section>
+
+  <footer>
+    <p>&copy; 2025 BubblesKitPvp. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const quoteBox = document.getElementById("quoteBox");
+    let quotes = [];
+    let currentQuote = 0;
+
+    async function loadQuotes() {
+      try {
+        const response = await fetch("quotes.json");
+        if (!response.ok) {
+          throw new Error(HTTP error! Status: ${response.status});
+        }
+        quotes = await response.json();
+        showNextQuote();
+        setInterval(showNextQuote, 4000);
+      } catch (error) {
+        console.error("Failed to load quotes:", error);
+        quoteBox.textContent = "Failed to load reviews.";
+      }
+    }
+
+    function showNextQuote() {
+      if (quotes.length === 0) return;
+
+      quoteBox.classList.add("fade-out");
+
+      setTimeout(() => {
+        const [user, quote, rating] = quotes[currentQuote];
+        quoteBox.innerHTML = 
+          <q>${quote}</q>
+          <div class="source">– ${user} (${rating}/10)</div>
+        ;
+        quoteBox.classList.remove("fade-out");
+        currentQuote = (currentQuote + 1) % quotes.length;
+      }, 500);
+    }
+
+    loadQuotes();
+  </script>
+</body>
+</html>
