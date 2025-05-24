@@ -28,139 +28,111 @@ p {
   line-height: 1.6;
 }
 
-/* Header (nav) */
+/* Header */
 header {
-  padding: 20px 20px 40px;
+  padding: 60px 20px;
+  text-align: center;
   background: #0e0e0e;
   border-bottom: 2px solid #007bff;
 }
 
-header nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+header h1 {
+  font-size: 3em;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-header nav ul li a {
-  color: #8ab4f8;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1em;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #007bff;
-}
-
-.logo {
-  width: 40px;
-  height: auto;
-  display: block;
+header p {
+  font-size: 1.2em;
+  color: #aaa;
 }
 
 /* Hero Section */
 .hero {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  color: #ffffff;
+  padding: 80px 20px 60px;
 }
 
 .hero h1 {
-  font-size: 3em;
+  font-size: 2.8em;
   margin-bottom: 20px;
-  text-align: center;
+  color: #ffffff;
 }
 
 .hero img {
   display: block;
   margin: 0 auto 20px auto;
-  width: 40px; /* smaller logo */
+  width: 20px; /* much smaller logo */
   height: auto;
 }
 
 .hero p {
   font-size: 1.2em;
-  color: #aaa;
-  margin-bottom: 15px;
-  text-align: center;
+  margin-bottom: 30px;
+  color: #ccc;
 }
 
-/* Small gradient line below hero text */
-.hero-divider {
-  height: 4px;
-  width: 180px;
-  margin: 20px auto 0 auto;
-  border-radius: 3px;
+/* Section divider above Player Reviews */
+#reviews-divider {
+  width: 100%;
+  height: 8px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
+  margin-bottom: 40px;
+  border-radius: 4px;
 }
 
-/* Buttons */
-.btn {
+/* Discord Login Button above the #reviews-divider */
+#discord-login-btn {
   display: inline-block;
-  background-color: #007bff;
-  color: #fff;
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
   padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 700;
+  border-radius: 10px;
+  font-weight: 600;
   font-size: 1.1em;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   text-decoration: none;
-  transition: background-color 0.3s;
-  margin-top: 20px;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+#discord-login-btn:hover {
+  background-color: #007bff;
+  color: #0e0e0e;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
 }
 
-/* Quotes Section - restored original style */
+/* Quotes Section */
 #quotes {
   background-color: #121212;
-  border-top: 10px solid #007bff; /* big line above quotes section */
-  border-bottom: 2px solid #007bff; /* small line below quotes section */
-  padding: 80px 20px;
+  border-top: 8px solid transparent; /* keep space for above divider */
+  border-bottom: 2px solid #007bff;
+  padding: 80px 20px 100px; /* a bit more bottom padding */
 }
 
 #quoteBox {
-  font-size: 1.5em;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #8ab4f8;
-  text-align: center;
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  padding: 20px;
   background-color: #1a1a1a;
   border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 40px;
   box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
   border: 1px solid #007bff;
+  font-size: 1.5em;
+  color: #8ab4f8;
+  line-height: 1.4;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Join Section */
-#join {
-  padding: 100px 20px;
-  background-color: #0e0e0e;
-  border-top: 2px solid #007bff; /* dividing line below quotes */
-  border-bottom: 2px solid #007bff;
-}
-
-#join h2 {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #ffffff;
+/* Smaller blue line below Player Reviews heading */
+#reviews h2 {
   position: relative;
   display: inline-block;
+  margin-bottom: 40px;
 }
 
-#join h2::after {
+#reviews h2::after {
   content: '';
   display: block;
   width: 100%;
@@ -170,12 +142,13 @@ header nav ul li a:hover {
   border-radius: 2px;
 }
 
-/* Discord Section */
+/* Discord Section (Reverted with glowing gradient lines) */
 #discord {
   padding: 100px 20px;
   background-color: #0e0e0e;
-  border-top: 10px solid #007bff; /* big glowing top line */
-  border-bottom: 10px solid #007bff; /* big glowing bottom line */
+  border-top: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
+  text-align: center;
 }
 
 #discord h2 {
@@ -194,9 +167,9 @@ header nav ul li a:hover {
   margin-top: 8px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   border-radius: 2px;
-  box-shadow: 0 0 15px #00c6ff;
 }
 
+/* Box styling */
 .discord-box {
   background-color: #1a1a1a;
   border-radius: 12px;
