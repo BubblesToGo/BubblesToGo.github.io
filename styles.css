@@ -1,3 +1,22 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* Welcome Section */
 #welcome {
   padding: 100px 20px 60px;
@@ -25,11 +44,160 @@
   line-height: 1.6;
 }
 
-/* Divider */
+/* Section Divider */
 .section-divider {
   height: 4px;
   width: 100%;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   border-radius: 2px;
   margin: 40px 0;
+}
+
+/* Reviews Section */
+#reviews {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+}
+
+#reviews h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.quote-box {
+  font-style: italic;
+  color: #eee;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  border-left: 4px solid #00c6ff;
+  background-color: #222;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quote-box.fade-out {
+  opacity: 0;
+}
+
+.source {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #888;
+}
+
+/* Join Section */
+#join {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #151515;
+}
+
+#join h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#join p {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #fff;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+}
+
+/* Discord Section */
+#discord {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #202225;
+}
+
+#discord h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.discord-box {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #2f3136;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  color: #ccc;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.discord-box h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.discord-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.discord-box li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.discord-box li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00c6ff;
+}
+
+.discord-box p {
+  margin-top: 20px;
+  font-style: italic;
+  color: #aaa;
+}
+
+.discord-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #5865F2;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.discord-btn:hover {
+  background-color: #4752c4;
+}
+
+.reconnect {
+  margin-top: 15px;
+  font-size: 0.9em;
+  color: #999;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #0e0e0e;
+  color: #666;
+  font-size: 0.9em;
 }
