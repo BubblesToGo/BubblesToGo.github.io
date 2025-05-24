@@ -60,44 +60,43 @@
   <footer>
     <p>&copy; 2025 BubblesKitPvp. All rights reserved.</p>
   </footer>
+<script>
+  const quoteBox = document.getElementById("quoteBox");
+  let quotes = [];
+  let currentQuote = 0;
 
-  <script>
-    const quoteBox = document.getElementById("quoteBox");
-    let quotes = [];
-    let currentQuote = 0;
-
-    async function loadQuotes() {
-      try {
-        const response = await fetch("quotes.json");
-        if (!response.ok) {
-          throw new Error(HTTP error! Status: ${response.status});
-        }
-        quotes = await response.json();
-        showNextQuote();
-        setInterval(showNextQuote, 4000);
-      } catch (error) {
-        console.error("Failed to load quotes:", error);
-        quoteBox.textContent = "Failed to load reviews.";
+  async function loadQuotes() {
+    try {
+      const response = await fetch("quotes.json");
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      quotes = await response.json();
+      showNextQuote();
+      setInterval(showNextQuote, 4000);
+    } catch (error) {
+      console.error("Failed to load quotes:", error);
+      quoteBox.textContent = "Failed to load reviews.";
     }
+  }
 
-    function showNextQuote() {
-      if (quotes.length === 0) return;
+  function showNextQuote() {
+    if (quotes.length === 0) return;
 
-      quoteBox.classList.add("fade-out");
+    quoteBox.classList.add("fade-out");
 
-      setTimeout(() => {
-        const [user, quote, rating] = quotes[currentQuote];
-        quoteBox.innerHTML = 
-          <q>${quote}</q>
-          <div class="source">– ${user} (${rating}/10)</div>
-        ;
-        quoteBox.classList.remove("fade-out");
-        currentQuote = (currentQuote + 1) % quotes.length;
-      }, 500);
-    }
+    setTimeout(() => {
+      const [user, quote, rating] = quotes[currentQuote];
+      quoteBox.innerHTML = `
+        <q>${quote}</q>
+        <div class="source">– ${user} (${rating}/10)</div>
+      `;
+      quoteBox.classList.remove("fade-out");
+      currentQuote = (currentQuote + 1) % quotes.length;
+    }, 500);
+  }
 
-    loadQuotes();
-  </script>
+  loadQuotes();
+</script>
 </body>
 </html>
