@@ -12,7 +12,7 @@
       <img src="logo.png" alt="Server Logo" class="logo"/>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#join">Join</a></li>
         <li><a href="#discord">Discord</a></li>
         <li><a href="#donate">Donate</a></li>
@@ -26,20 +26,9 @@
     <a href="#join" class="btn">Join Now</a>
   </section>
 
-  <section id="features">
-    <h2>Features</h2>
-    <div class="feature">
-      <h3>Community Events</h3>
-      <p>Participate in exciting events like King of the Hill and more.</p>
-    </div>
-    <div class="feature">
-      <h3>Custom Plugins</h3>
-      <p>Enjoy a unique experience with our custom-developed plugins.</p>
-    </div>
-    <div class="feature">
-      <h3>Active Discord</h3>
-      <p>Join our Discord community for updates, support, and chat.</p>
-    </div>
+  <section id="reviews">
+    <h2>Player Reviews</h2>
+    <div id="quoteBox" class="quote-box">Loading reviews...</div>
   </section>
 
   <section id="join">
@@ -58,5 +47,44 @@
   <footer>
     <p>&copy; 2025 YourServerName. All rights reserved.</p>
   </footer>
+
+  <script>
+    const quoteBox = document.getElementById("quoteBox");
+    let quotes = [];
+    let currentQuote = 0;
+
+    async function loadQuotes() {
+      try {
+        const response = await fetch("quotes.json");
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        quotes = await response.json();
+        showNextQuote();
+        setInterval(showNextQuote, 4000);
+      } catch (error) {
+        console.error("Failed to load quotes:", error);
+        quoteBox.textContent = "Failed to load reviews.";
+      }
+    }
+
+    function showNextQuote() {
+      if (quotes.length === 0) return;
+
+      quoteBox.classList.add("fade-out");
+
+      setTimeout(() => {
+        const [user, quote, rating] = quotes[currentQuote];
+        quoteBox.innerHTML = `
+          <q>${quote}</q>
+          <div class="source">– ${user} (${rating}/10)</div>
+        `;
+        quoteBox.classList.remove("fade-out");
+        currentQuote = (currentQuote + 1) % quotes.length;
+      }, 500);
+    }
+
+    loadQuotes();
+  </script>
 </body>
 </html>
