@@ -14,7 +14,7 @@
       <img src="logo.png" alt="Server Logo" class="logo" />
     </div>
 
-    <!-- CENTRED nav links (unchanged) -->
+    <!-- CENTER nav links -->
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#reviews">Reviews</a></li>
@@ -72,6 +72,7 @@
 </footer>
 
 <script>
+  // Quote Rotation
   const quoteBox = document.getElementById("quoteBox");
   let quotes = [];
   let currentQuote = 0;
@@ -79,9 +80,7 @@
   async function loadQuotes() {
     try {
       const response = await fetch("quotes.json");
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
       quotes = await response.json();
       showNextQuote();
       setInterval(showNextQuote, 4000);
@@ -93,9 +92,7 @@
 
   function showNextQuote() {
     if (quotes.length === 0) return;
-
     quoteBox.classList.add("fade-out");
-
     setTimeout(() => {
       const [user, quote, rating] = quotes[currentQuote];
       quoteBox.innerHTML = `
@@ -109,32 +106,30 @@
 
   loadQuotes();
 
-  // --- Discord OAuth Login System ---
+  // --- Discord Login ---
+  const clientId = "1374928268901220482";
+  const redirectUri = "https://bubblestogo.github.io";
 
-  const CLIENT_ID = "YOUR_DISCORD_CLIENT_ID";  // <-- Replace this with your Discord app client ID
-  const REDIRECT_URI = window.location.origin + "/oauth-callback.html"; // your redirect URI
-  const SCOPE = "identify email guilds";
-  const RESPONSE_TYPE = "token";
-
-  const loginBtn = document.getElementById("login-btn");
-  const discordLoginDiv = document.getElementById("discord-login");
-
-  // Load user data from sessionStorage if available
-  function getUser() {
-    const user = sessionStorage.getItem("discordUser");
-    return user ? JSON.parse(user) : null;
+  function loginWithDiscord() {
+    const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=identify`;
+    window.location.href = authUrl;
   }
 
-  function setUser(user) {
-    sessionStorage.setItem("discordUser", JSON.stringify(user));
+  function getTokenFromHash() {
+    const match = window.location.hash.match(/access_token=([^&]*)/);
+    return match ? match[1] : null;
   }
 
-  function clearUser() {
-    sessionStorage.removeItem("discordUser");
+  async function fetchDiscordUser(token) {
+    const res = await fetch("https://discord.com/api/users/@me", {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    if (!res.ok) throw new Error("Failed to fetch user");
+    return await res.json();
   }
 
-  // Build user display UI (avatar, username, logout)
-  function buildUserUI(user) {
+  function showUser(user) {
+    const discordLoginDiv = document.getElementById("discord-login");
     discordLoginDiv.innerHTML = `
       <div class="user-info" style="display:flex; align-items:center; gap:10px; color:#5865F2; font-weight:600;">
         <img src="https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border: 2px solid #5865F2;" />
@@ -143,57 +138,26 @@
       </div>
     `;
     document.getElementById("logout-btn").addEventListener("click", () => {
-      clearUser();
+      localStorage.removeItem("discordUser");
       location.reload();
     });
   }
 
-  // Open Discord OAuth popup
-  function openDiscordOAuth() {
-    const oauthUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPE)}`;
-    const width = 500;
-    const height = 600;
-    const left = (screen.width / 2) - (width / 2);
-    const top = (screen.height / 2) - (height / 2);
-
-    const oauthWindow = window.open(oauthUrl, "Discord Login", `width=${width},height=${height},top=${top},left=${left}`);
-
-    const pollTimer = window.setInterval(() => {
-      try {
-        if (oauthWindow.closed) {
-          window.clearInterval(pollTimer);
-        }
-        // We cannot access the OAuth window URL because of cross-origin restrictions,
-        // so instead you should implement your own OAuth callback page on your server that
-        // passes the token back to the opener window via postMessage or localStorage.
-      } catch (error) {
-        // Ignore cross-origin errors.
-      }
-    }, 1000);
+  const token = getTokenFromHash();
+  if (token) {
+    fetchDiscordUser(token).then(user => {
+      localStorage.setItem("discordUser", JSON.stringify(user));
+      showUser(user);
+      history.replaceState({}, document.title, window.location.pathname);
+    }).catch(() => alert("Discord login failed"));
+  } else if (localStorage.getItem("discordUser")) {
+    showUser(JSON.parse(localStorage.getItem("discordUser")));
+  } else {
+    document.getElementById("login-btn").addEventListener("click", e => {
+      e.preventDefault();
+      loginWithDiscord();
+    });
   }
-
-  // On page load check if logged in
-  window.addEventListener("load", () => {
-    const user = getUser();
-    if (user) {
-      buildUserUI(user);
-    } else {
-      loginBtn.addEventListener("click", e => {
-        e.preventDefault();
-        openDiscordOAuth();
-      });
-    }
-  });
-
-  // Receive message from OAuth popup (you need to implement this on oauth-callback.html)
-  window.addEventListener("message", event => {
-    if (event.origin !== window.location.origin) return;
-    if (event.data.type === "discordAuth") {
-      const user = event.data.user;
-      setUser(user);
-      buildUserUI(user);
-    }
-  });
 </script>
 </body>
 </html>
