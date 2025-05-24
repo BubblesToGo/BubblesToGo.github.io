@@ -30,7 +30,7 @@ p {
 
 /* Welcome Section */
 #welcome .main-logo {
-  width: 160px;
+  width: 180px;
   max-width: 100%;
   margin: 20px auto;
   display: block;
@@ -45,7 +45,6 @@ p {
   margin-right: auto;
 }
 
-/* Section Divider (used in Welcome and Discord) */
 .section-divider {
   height: 4px;
   width: 100%;
@@ -78,8 +77,28 @@ p {
 #discord {
   padding: 100px 20px;
   background-color: #0e0e0e;
-  border-top: 2px solid #007bff;
-  border-bottom: 2px solid #007bff;
+  position: relative;
+}
+
+#discord::before,
+#discord::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  box-shadow: 0 0 15px #007bff, 0 0 25px #00c6ff;
+  border-radius: 2px;
+}
+
+#discord::before {
+  top: 0;
+}
+
+#discord::after {
+  bottom: 0;
 }
 
 #discord h2 {
@@ -99,9 +118,10 @@ p {
   margin-top: 8px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   border-radius: 2px;
+  box-shadow: 0 0 10px #007bff, 0 0 15px #00c6ff;
 }
 
-/* Box styling */
+/* Discord Box */
 .discord-box {
   background-color: #1a1a1a;
   border-radius: 12px;
