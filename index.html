@@ -9,83 +9,39 @@
 <body>
 
   <!-- Welcome Section -->
-  <section id="welcome" style="text-align:center; padding: 30px 20px;">
-    <div style="display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
-      <img class="main-logo" src="logo.png" alt="Logo" style="width: 20px; height: auto;" />
-      <p class="intro-text" style="margin: 0; font-size: 1.1em;">
-        Welcome to our Minecraft network! Join the fun and explore custom games, events, and more.
-      </p>
-    </div>
-    <div class="section-divider" style="margin: 20px auto 0 auto; width: 100%; max-width: 1000px; height: 3px; border-radius: 3px; background: linear-gradient(to right, #00c6ff, #0072ff);"></div>
-  </section>
-
-  <!-- Discord Login Button + Divider -->
-  <section id="discord-login-section" style="text-align:center; margin: 40px 0;">
-    <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=code&scope=identify%20email"
-       id="discord-login-btn" target="_blank" rel="noopener noreferrer"
-       style="display: inline-block; padding: 12px 28px; background: linear-gradient(90deg, #7289da, #99aab5);
-              border-radius: 25px; color: white; font-weight: 600; text-decoration: none;
-              box-shadow: 0 0 10px #7289daaa; transition: background 0.3s ease;">
-      Log in with Discord
-    </a>
-    <div class="section-divider" style="margin: 30px auto 0 auto; width: 100%; max-width: 1000px; height: 3px; border-radius: 3px; background: linear-gradient(to right, #00c6ff, #0072ff);"></div>
+  <section id="welcome">
+    <img class="main-logo" src="logo.png" alt="Logo" />
+    <p class="intro-text">
+      Welcome to our Minecraft network! Join the fun and explore custom games, events, and more.
+    </p>
+    <div class="section-divider"></div>
   </section>
 
   <!-- Player Reviews Section -->
-  <section id="reviews" style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
-    <h2 style="text-align: center; margin-bottom: 15px;">Player Reviews</h2>
-    <div id="quoteBox" class="quote-box" style="
-      background: #0a1e3f; 
-      border: 2px solid #0072ff; 
-      border-radius: 10px; 
-      padding: 25px; 
-      color: white;
-      font-style: italic;
-      font-size: 1.1em;
-      min-height: 100px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      box-shadow: 0 0 10px #0072ff99;
-      transition: opacity 0.5s ease;
-    ">Loading reviews...</div>
-    <div class="section-divider" style="margin: 20px auto 0 auto; width: 100%; max-width: 1000px; height: 3px; border-radius: 3px; background: linear-gradient(to right, #00c6ff, #0072ff);"></div>
+  <section id="reviews">
+    <div class="section-divider"></div>
+    <h2>Player Reviews</h2>
+    <div id="quoteBox" class="quote-box">Loading reviews...</div>
+    <div class="section-divider"></div>
   </section>
 
   <!-- Join the Adventure Section -->
-  <section id="join" style="text-align: center; padding: 40px 20px;">
+  <section id="join">
+    <div class="section-divider"></div>
     <h2>Join the Adventure</h2>
     <p>Server IP: <strong>play.bubblespvp.net</strong></p>
     <p>Port: <strong>19132</strong></p>
-    <a href="#discord" class="btn" style="
-      display: inline-block;
-      padding: 12px 28px;
-      background: #0072ff;
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 0 8px #0072ff88;
-      transition: background 0.3s ease;
-    ">Join Our Discord</a>
-    <div class="section-divider" style="margin: 40px auto 0 auto; width: 100%; max-width: 1000px; height: 3px; border-radius: 3px; background: linear-gradient(to right, #00c6ff, #0072ff);"></div>
+    <a href="#discord" class="btn">Join Our Discord</a>
+    <div class="section-divider"></div>
   </section>
 
   <!-- Discord Section -->
-  <section id="discord" style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-    <h2 style="text-align:center; margin-bottom: 20px;">Join Our Discord Community</h2>
-    <div class="discord-box" style="
-      background: #0a1e3f;
-      border-radius: 15px;
-      padding: 30px;
-      color: white;
-      box-shadow:
-        0 0 10px #0072ffaa,
-        inset 0 0 12px #00c6ffcc;
-    ">
-      <h3 style="margin-top: 0; margin-bottom: 15px; text-align: center;">Fully Integrated & Reliable Platform</h3>
-      <ul style="list-style: none; padding-left: 0; line-height: 1.6; max-width: 400px; margin: 0 auto 15px auto;">
+  <section id="discord">
+    <div class="section-divider" style="margin-bottom: 30px;"></div>
+    <h2>Join Our Discord Community</h2>
+    <div class="discord-box">
+      <h3>Fully Integrated & Reliable Platform</h3>
+      <ul>
         <li>✓ Meet other Bubbles KitPvP Members</li>
         <li>✓ Real-time Realm chat integration</li>
         <li>✓ Instant update notifications</li>
@@ -94,30 +50,14 @@
         <li>✓ Exclusive announcement channel</li>
         <li>✓ Community showcase opportunities</li>
       </ul>
-      <p style="text-align: center; font-weight: 600;">&amp; many more benefits!</p>
-      <div style="text-align:center; margin-top: 20px;">
-        <a class="discord-btn" href="https://discord.gg/bubbleskitpvp" target="_blank" style="
-          display: inline-block;
-          padding: 14px 32px;
-          background: linear-gradient(90deg, #7289da, #99aab5);
-          border-radius: 30px;
-          color: white;
-          font-weight: 700;
-          text-decoration: none;
-          box-shadow: 0 0 12px #7289dacc;
-          transition: background 0.3s ease;
-        ">🔗 Join Now</a>
-      </div>
-      <div class="reconnect" style="margin-top: 15px; text-align: center; font-size: 0.9em; color: #99aab5;">
-        Already a member? <a href="https://discord.gg/bubbleskitpvp" style="color: #00c6ff; text-decoration: underline;">Click to reconnect</a>
-      </div>
+      <p>&amp; many more benefits!</p>
+      <a class="discord-btn" href="https://discord.gg/bubbleskitpvp" target="_blank">🔗 Join Now</a>
+      <div class="reconnect">Already a member? <a href="https://discord.gg/bubbleskitpvp">Click to reconnect</a></div>
     </div>
-    <!-- Add extra spacing and divider below Discord content -->
-    <div style="height: 30px;"></div>
-    <div class="section-divider" style="margin: 0 auto 40px auto; width: 100%; max-width: 1000px; height: 3px; border-radius: 3px; background: linear-gradient(to right, #00c6ff, #0072ff);"></div>
+    <div class="section-divider" style="margin-top: 30px;"></div>
   </section>
 
-  <footer style="text-align: center; padding: 20px 10px; color: #888; font-size: 0.9em;">
+  <footer>
     <p>&copy; 2025 BubblesKitPvP. All rights reserved.</p>
   </footer>
 
@@ -144,21 +84,20 @@
     function showNextQuote() {
       if (quotes.length === 0) return;
 
-      quoteBox.style.opacity = '0';
+      quoteBox.classList.add("fade-out");
 
       setTimeout(() => {
         const [user, quote, rating] = quotes[currentQuote];
         quoteBox.innerHTML = `
           <q>${quote}</q>
-          <div class="source" style="margin-top: 10px; font-style: normal; font-weight: 600;">– ${user} (${rating}/10)</div>
+          <div class="source">– ${user} (${rating}/10)</div>
         `;
-        quoteBox.style.opacity = '1';
+        quoteBox.classList.remove("fade-out");
         currentQuote = (currentQuote + 1) % quotes.length;
       }, 500);
     }
 
     loadQuotes();
   </script>
-
 </body>
 </html>
