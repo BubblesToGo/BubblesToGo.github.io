@@ -12,6 +12,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
+/* General Layout */
 section {
   padding: 100px 20px;
   text-align: center;
@@ -27,118 +28,154 @@ p {
   line-height: 1.6;
 }
 
-/* Welcome Section */
-#welcome .main-logo {
-  width: 180px;
-  max-width: 100%;
-  margin: 20px auto;
+/* Header (nav) */
+header {
+  padding: 20px 20px 40px;
+  background: #0e0e0e;
+  border-bottom: 2px solid #007bff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li a {
+  color: #8ab4f8;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #007bff;
+}
+
+.logo {
+  width: 80px; /* slightly bigger logo */
+  height: auto;
   display: block;
 }
 
-#welcome .intro-text {
+/* Hero Section */
+.hero {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #ffffff;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero img {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 120px; /* slightly bigger */
+  height: auto;
+}
+
+.hero p {
   font-size: 1.2em;
-  color: #ccc;
-  margin-top: 20px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  color: #aaa;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.section-divider {
+/* Small gradient line below hero text */
+.hero-divider {
   height: 4px;
-  width: 100%;
-  max-width: 700px;
-  margin: 30px auto 0;
+  width: 180px;
+  margin: 20px auto 0 auto;
+  border-radius: 3px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
-  border-radius: 2px;
 }
 
-/* QUOTES SECTION */
+/* Buttons */
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
 
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Quotes Section - restored original style */
 #quotes {
   background-color: #121212;
+  border-top: 10px solid #007bff; /* big line above quotes section */
+  border-bottom: 2px solid #007bff; /* small line below quotes section */
   padding: 80px 20px;
-  position: relative;
-  text-align: center;
-  border-top: none;
-  border-bottom: none;
-}
-
-#quotes::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  height: 10px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  box-shadow: 0 0 20px #007bff, 0 0 40px #00c6ff;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-#quotes::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 4px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  box-shadow: 0 0 10px #007bff;
-  border-radius: 2px;
-  z-index: 1;
 }
 
 #quoteBox {
-  font-size: 1.6em;
+  font-size: 1.5em;
   max-width: 800px;
   margin: 0 auto;
   color: #8ab4f8;
   text-align: center;
-  padding: 20px;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
+  border: 1px solid #007bff;
 }
 
-#quoteBox::after {
+/* Join Section */
+#join {
+  padding: 100px 20px;
+  background-color: #0e0e0e;
+  border-top: 2px solid #007bff; /* dividing line below quotes */
+  border-bottom: 2px solid #007bff;
+}
+
+#join h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+#join h2::after {
   content: '';
   display: block;
-  width: 50%;
-  height: 3px;
-  margin: 20px auto 0;
+  width: 100%;
+  height: 4px;
+  margin-top: 8px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   border-radius: 2px;
 }
 
-/* DISCORD SECTION */
+/* Discord Section */
 #discord {
   padding: 100px 20px;
   background-color: #0e0e0e;
-  position: relative;
-}
-
-#discord::before,
-#discord::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
-  height: 4px;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  box-shadow: 0 0 15px #007bff, 0 0 25px #00c6ff;
-  border-radius: 2px;
-}
-
-#discord::before {
-  top: 0;
-}
-
-#discord::after {
-  bottom: 0;
+  border-top: 10px solid #007bff; /* big glowing top line */
+  border-bottom: 10px solid #007bff; /* big glowing bottom line */
 }
 
 #discord h2 {
@@ -147,7 +184,6 @@ p {
   color: #ffffff;
   position: relative;
   display: inline-block;
-  text-align: center;
 }
 
 #discord h2::after {
@@ -158,10 +194,9 @@ p {
   margin-top: 8px;
   background: linear-gradient(to right, #00c6ff, #0072ff);
   border-radius: 2px;
-  box-shadow: 0 0 10px #007bff, 0 0 15px #00c6ff;
+  box-shadow: 0 0 15px #00c6ff;
 }
 
-/* Discord Box */
 .discord-box {
   background-color: #1a1a1a;
   border-radius: 12px;
