@@ -12,7 +12,6 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* General Layout */
 section {
   padding: 100px 20px;
   text-align: center;
@@ -54,26 +53,67 @@ p {
   border-radius: 2px;
 }
 
-/* Quote Section */
+/* QUOTES SECTION */
+
 #quotes {
   background-color: #121212;
-  border-top: 2px solid #007bff;
-  border-bottom: 2px solid #007bff;
   padding: 80px 20px;
+  position: relative;
+  text-align: center;
+  border-top: none;
+  border-bottom: none;
+}
+
+#quotes::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 10px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  box-shadow: 0 0 20px #007bff, 0 0 40px #00c6ff;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#quotes::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 4px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  box-shadow: 0 0 10px #007bff;
+  border-radius: 2px;
+  z-index: 1;
 }
 
 #quoteBox {
-  font-size: 1.5em;
+  font-size: 1.6em;
   max-width: 800px;
   margin: 0 auto;
   color: #8ab4f8;
   text-align: center;
+  padding: 20px;
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
-  padding: 20px;
 }
 
-/* Discord Section */
+#quoteBox::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  margin: 20px auto 0;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border-radius: 2px;
+}
+
+/* DISCORD SECTION */
 #discord {
   padding: 100px 20px;
   background-color: #0e0e0e;
