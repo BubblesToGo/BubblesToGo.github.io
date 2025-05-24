@@ -12,8 +12,6 @@
     <!-- LEFT side wrapper -->
     <div class="nav-left">
       <img src="logo.png" alt="Server Logo" class="logo" />
-      <a href="https://discord.com/oauth2/authorize?..." class="login-btn"
-         target="_blank">Log&nbsp;in&nbsp;with&nbsp;Discord</a>
     </div>
 
     <!-- CENTRED nav links (unchanged) -->
@@ -24,26 +22,31 @@
       <li><a href="#discord">Discord</a></li>
       <li><a href="#donate">Donate</a></li>
     </ul>
+
+    <!-- RIGHT side: Discord Login UI -->
+    <div id="discord-login" style="position: absolute; top: 20px; right: 20px;">
+      <a href="#" id="login-btn" class="login-btn">Log&nbsp;in&nbsp;with&nbsp;Discord</a>
+    </div>
   </nav>
 </header>
 
-  <section id="home" class="hero">
-    <h1>Welcome to Bubbles Kitpvp</h1>
-    <p>A Minecraft server focused on community, creativity, and fun.</p>
-    <a href="#join" class="btn">Join Now</a>
-  </section>
+<section id="home" class="hero">
+  <h1>Welcome to Bubbles Kitpvp</h1>
+  <p>A Minecraft server focused on community, creativity, and fun.</p>
+  <a href="#join" class="btn">Join Now</a>
+</section>
 
-  <section id="reviews">
-    <h2>Player Reviews</h2>
-    <div id="quoteBox" class="quote-box">Loading reviews...</div>
-  </section>
+<section id="reviews">
+  <h2>Player Reviews</h2>
+  <div id="quoteBox" class="quote-box">Loading reviews...</div>
+</section>
 
-  <section id="join">
-    <h2>Join the Adventure</h2>
-    <p>Server IP: <strong>play.bubblespvp.net</strong></p>
-    <p>Port: <strong>19132</strong></p>
-    <a href="#discord" class="btn">Join Our Discord</a>
-  </section>
+<section id="join">
+  <h2>Join the Adventure</h2>
+  <p>Server IP: <strong>play.bubblespvp.net</strong></p>
+  <p>Port: <strong>19132</strong></p>
+  <a href="#discord" class="btn">Join Our Discord</a>
+</section>
 
 <section id="discord">
   <h2>Join Our Discord Community</h2>
@@ -64,9 +67,10 @@
   </div>
 </section>
 
-  <footer>
-    <p>&copy; 2025 BubblesKitPvp. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>&copy; 2025 BubblesKitPvp. All rights reserved.</p>
+</footer>
+
 <script>
   const quoteBox = document.getElementById("quoteBox");
   let quotes = [];
@@ -104,6 +108,92 @@
   }
 
   loadQuotes();
+
+  // --- Discord OAuth Login System ---
+
+  const CLIENT_ID = "YOUR_DISCORD_CLIENT_ID";  // <-- Replace this with your Discord app client ID
+  const REDIRECT_URI = window.location.origin + "/oauth-callback.html"; // your redirect URI
+  const SCOPE = "identify email guilds";
+  const RESPONSE_TYPE = "token";
+
+  const loginBtn = document.getElementById("login-btn");
+  const discordLoginDiv = document.getElementById("discord-login");
+
+  // Load user data from sessionStorage if available
+  function getUser() {
+    const user = sessionStorage.getItem("discordUser");
+    return user ? JSON.parse(user) : null;
+  }
+
+  function setUser(user) {
+    sessionStorage.setItem("discordUser", JSON.stringify(user));
+  }
+
+  function clearUser() {
+    sessionStorage.removeItem("discordUser");
+  }
+
+  // Build user display UI (avatar, username, logout)
+  function buildUserUI(user) {
+    discordLoginDiv.innerHTML = `
+      <div class="user-info" style="display:flex; align-items:center; gap:10px; color:#5865F2; font-weight:600;">
+        <img src="https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border: 2px solid #5865F2;" />
+        <span>${user.username}#${user.discriminator}</span>
+        <button id="logout-btn" style="background:#5865F2; color:#fff; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">Logout</button>
+      </div>
+    `;
+    document.getElementById("logout-btn").addEventListener("click", () => {
+      clearUser();
+      location.reload();
+    });
+  }
+
+  // Open Discord OAuth popup
+  function openDiscordOAuth() {
+    const oauthUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPE)}`;
+    const width = 500;
+    const height = 600;
+    const left = (screen.width / 2) - (width / 2);
+    const top = (screen.height / 2) - (height / 2);
+
+    const oauthWindow = window.open(oauthUrl, "Discord Login", `width=${width},height=${height},top=${top},left=${left}`);
+
+    const pollTimer = window.setInterval(() => {
+      try {
+        if (oauthWindow.closed) {
+          window.clearInterval(pollTimer);
+        }
+        // We cannot access the OAuth window URL because of cross-origin restrictions,
+        // so instead you should implement your own OAuth callback page on your server that
+        // passes the token back to the opener window via postMessage or localStorage.
+      } catch (error) {
+        // Ignore cross-origin errors.
+      }
+    }, 1000);
+  }
+
+  // On page load check if logged in
+  window.addEventListener("load", () => {
+    const user = getUser();
+    if (user) {
+      buildUserUI(user);
+    } else {
+      loginBtn.addEventListener("click", e => {
+        e.preventDefault();
+        openDiscordOAuth();
+      });
+    }
+  });
+
+  // Receive message from OAuth popup (you need to implement this on oauth-callback.html)
+  window.addEventListener("message", event => {
+    if (event.origin !== window.location.origin) return;
+    if (event.data.type === "discordAuth") {
+      const user = event.data.user;
+      setUser(user);
+      buildUserUI(user);
+    }
+  });
 </script>
 </body>
 </html>
