@@ -73,24 +73,43 @@ nav ul li a {
   background-color: #0097a7;
 }
 
-/* Features Section */
-#features {
+/* Reviews Section */
+#reviews {
   padding: 60px 20px;
   background-color: #1a1a1a;
-}
-
-#features h2 {
   text-align: center;
+}
+
+#reviews h2 {
   margin-bottom: 40px;
-}
-
-.feature {
-  margin-bottom: 30px;
-}
-
-.feature h3 {
   color: #00bcd4;
-  margin-bottom: 10px;
+}
+
+.quote-box {
+  font-size: 1.2em;
+  color: #ffffff;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-box.fade-out {
+  opacity: 0;
+}
+
+.quote-box q {
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.quote-box .source {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00bcd4;
 }
 
 /* Join Section */
