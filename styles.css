@@ -1,64 +1,112 @@
-/* General Reset & Styling */
+/* General resets and styling */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0a0f1f;
-  color: #d0d4e8;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
+  background-color: #121212;
+  color: #d3d3d3;
   text-align: center;
 }
 
-/* Welcome Section */
-#welcome {
-  padding: 40px 20px 30px;
-}
-
+/* Main Logo */
 .main-logo {
-  width: 100px;
-  height: auto;
-  margin: 0 auto 20px;
+  width: 160px;  /* Medium size */
+  margin: 20px auto 10px;
   display: block;
 }
 
+/* Intro Text under logo */
 .intro-text {
   font-size: 1.2em;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.5;
-  color: #c7d0ff;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  line-height: 1.4;
 }
 
-/* Section Divider - Gradient line under each section and between */
+/* Buttons base style */
+.btn {
+  background: linear-gradient(90deg, #7289da, #5b6eae);
+  box-shadow: 0 0 10px #7289da99;
+  padding: 12px 30px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1em;
+  border-radius: 28px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #5b6eae, #7289da);
+  box-shadow: 0 0 15px #7289dacc;
+}
+
+/* Discord Login Button specifically */
+.discord-login-btn {
+  margin-top: 20px;
+  padding: 14px 36px;
+  font-size: 1.1em;
+  font-weight: 700;
+  box-shadow: 0 0 15px #7289daaa;
+  border-radius: 30px;
+}
+
+/* Section Dividers (long gradient lines) */
 .section-divider {
-  margin: 30px auto;
-  width: 90%;
-  max-width: 900px;
   height: 3px;
+  margin: 30px auto 30px;
+  max-width: 900px;
+  width: 90%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 8px #0072ff99;
+}
+
+/* Larger divider below Discord login button */
+.large-divider {
+  height: 6px;
+  margin-top: 30px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 12px #0072ffcc;
+}
+
+/* Smaller divider for under reviews heading */
+.small-divider {
+  height: 2px;
+  margin: 10px auto 20px;
+  max-width: 600px;
+  width: 60%;
   border-radius: 3px;
   background: linear-gradient(90deg, #00c6ff, #0072ff);
+  box-shadow: 0 0 5px #0072ff99;
 }
 
-/* Headings */
-h2 {
+/* Player Reviews Section */
+#reviews h2,
+#join h2,
+#discord h2 {
   font-weight: 700;
   font-size: 2em;
-  color: #74b9ff;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #73a8ff;
 }
 
 /* Quote Box */
 .quote-box {
-  background-color: rgba(14, 32, 67, 0.85);
-  border-radius: 10px;
-  border-left: 5px solid #0072ff;
-  max-width: 700px;
-  margin: 0 auto 20px;
-  padding: 25px 30px;
+  max-width: 650px;
+  margin: 0 auto 25px;
+  background-color: #1a1a1a;
+  padding: 20px 30px;
+  border-radius: 12px;
+  border-left: 6px solid #3a84ff;
   font-style: italic;
-  color: #c7d0ff;
-  font-size: 1.2em;
-  position: relative;
+  font-size: 1.1em;
+  color: #cbd6e3;
+  box-shadow: 0 0 12px #3a84ff55;
   transition: opacity 0.5s ease;
+  position: relative;
 }
 
 .quote-box q {
@@ -76,58 +124,30 @@ h2 {
 .source {
   margin-top: 15px;
   font-weight: 600;
+  color: #84a9ff;
   font-style: normal;
-  color: #00c6ff;
+  font-size: 0.95em;
 }
 
 /* Fade animation for quotes */
 .fade-out {
   opacity: 0;
-  transition: opacity 0.5s ease;
 }
 
-/* Join the Adventure */
-#join p {
-  font-size: 1.1em;
-  margin: 8px 0;
-  color: #a3baff;
-}
-
-.btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: #fff;
-  padding: 12px 26px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 700;
-  margin-top: 15px;
-  box-shadow: 0 0 15px #0072ff99;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: linear-gradient(90deg, #0072ff, #00c6ff);
-  box-shadow: 0 0 20px #00c6ffcc;
-}
-
-/* Discord Section */
-#discord {
-  padding: 20px 10px 40px;
-}
-
+/* Discord Box */
 .discord-box {
-  background-color: rgba(14, 32, 67, 0.85);
-  border-radius: 12px;
-  padding: 25px 30px;
+  background-color: #1f2430;
   max-width: 700px;
-  margin: 0 auto;
-  color: #c7d0ff;
-  box-shadow: 0 0 25px #0072ff88;
+  margin: 0 auto 30px;
+  padding: 25px 35px;
+  border-radius: 12px;
+  box-shadow: 0 0 18px #7289da99;
+  color: #dce3f1;
+  text-align: left;
 }
 
 .discord-box h3 {
-  color: #00aaff;
+  color: #89aaff;
   margin-bottom: 15px;
 }
 
@@ -135,48 +155,80 @@ h2 {
   list-style: none;
   padding-left: 0;
   margin-bottom: 15px;
-  color: #a3baff;
-  font-weight: 600;
 }
 
 .discord-box ul li {
-  margin-bottom: 8px;
+  margin: 8px 0;
+  padding-left: 20px;
+  position: relative;
+  font-weight: 600;
+  color: #a3baff;
+}
+
+.discord-box ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00aaff;
+  font-weight: bold;
 }
 
 .discord-btn {
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: white;
-  font-weight: 700;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
   display: inline-block;
-  box-shadow: 0 0 15px #0072ffcc;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #7289da, #5b6eae);
+  box-shadow: 0 0 15px #7289da99;
+  padding: 12px 34px;
+  font-weight: 700;
+  border-radius: 28px;
+  color: #fff;
+  text-decoration: none;
   transition: background 0.3s ease;
-  margin-bottom: 15px;
 }
 
 .discord-btn:hover {
-  background: linear-gradient(90deg, #0072ff, #00c6ff);
-  box-shadow: 0 0 20px #00c6ffcc;
-}
-
-.reconnect a {
-  color: #00aaff;
-  text-decoration: underline;
-  font-weight: 600;
+  background: linear-gradient(90deg, #5b6eae, #7289da);
+  box-shadow: 0 0 20px #7289dacc;
 }
 
 .reconnect {
+  margin-top: 15px;
   font-size: 0.9em;
-  margin-top: 10px;
+  color: #a2a9b8;
+}
+
+.reconnect a {
+  color: #6791f5;
+  text-decoration: none;
+}
+
+.reconnect a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  padding: 20px 10px;
-  font-size: 0.9em;
-  color: #6677aa;
-  background-color: #05102b;
-  margin-top: 50px;
+  margin: 40px 0 20px;
+  font-size: 0.85em;
+  color: #7a7f8b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .main-logo {
+    width: 120px;
+  }
+
+  .intro-text {
+    font-size: 1em;
+    padding: 0 15px;
+  }
+
+  .quote-box {
+    margin: 0 15px 25px;
+  }
+
+  .discord-box {
+    margin: 0 15px 30px;
+  }
 }
