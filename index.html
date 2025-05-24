@@ -3,47 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bubbles KitPvP | Home</title>
+  <title>Bubbles KitPvP</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Welcome Section -->
-  <section id="welcome">
-    <img class="main-logo" src="logo.png" alt="Logo" />
-    <p class="intro-text">
-      Welcome to our Minecraft network! Join the fun and explore custom games, events, and more.
-    </p>
-    <a href="#discord" class="btn discord-login-btn">Log In with Discord</a>
-    <div class="section-divider large-divider"></div>
+  <header>
+    <h1>Bubbles KitPvP</h1>
+    <p>Welcome to the most exciting KitPvP server!</p>
+  </header>
+
+  <section id="quotes">
+    <div id="quoteBox">"Join the bubble… or be popped."</div>
   </section>
 
-  <!-- Player Reviews Section -->
-  <section id="reviews">
-    <div class="section-divider"></div>
-    <h2>Player Reviews</h2>
-    <div id="quoteBox" class="quote-box">Loading reviews...</div>
-    <div class="section-divider small-divider"></div>
-  </section>
-
-  <!-- Join the Adventure Section -->
-  <section id="join">
-    <div class="section-divider"></div>
-    <h2>Join the Adventure</h2>
-    <p>Server IP: <strong>play.bubblespvp.net</strong></p>
-    <p>Port: <strong>19132</strong></p>
-    <a href="#discord" class="btn">Join Our Discord</a>
-    <div class="section-divider"></div>
-  </section>
-
-  <!-- Discord Community Section -->
   <section id="discord">
-    <div class="section-divider"></div>
     <h2>Join Our Discord Community</h2>
     <div class="discord-box">
       <h3>Fully Integrated & Reliable Platform</h3>
       <ul>
-        <li>✓ Meet other Bubbles KitPvP Members</li>
+        <li>✓ Meet other CrabsSMP Members</li>
         <li>✓ Real-time Realm chat integration</li>
         <li>✓ Instant update notifications</li>
         <li>✓ Help shape our growing community</li>
@@ -55,51 +37,11 @@
       <a class="discord-btn" href="https://discord.gg/bubbleskitpvp" target="_blank">🔗 Join Now</a>
       <div class="reconnect">Already a member? <a href="https://discord.gg/bubbleskitpvp">Click to reconnect</a></div>
     </div>
-    <div class="section-divider"></div>
   </section>
 
   <footer>
-    <p>&copy; 2025 BubblesKitPvP. All rights reserved.</p>
+    <p>&copy; 2025 Bubbles KitPvP. All rights reserved.</p>
   </footer>
-
-  <script>
-    const quoteBox = document.getElementById("quoteBox");
-    let quotes = [];
-    let currentQuote = 0;
-
-    async function loadQuotes() {
-      try {
-        const response = await fetch("quotes.json");
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        quotes = await response.json();
-        showNextQuote();
-        setInterval(showNextQuote, 4000);
-      } catch (error) {
-        console.error("Failed to load quotes:", error);
-        quoteBox.textContent = "Failed to load reviews.";
-      }
-    }
-
-    function showNextQuote() {
-      if (quotes.length === 0) return;
-
-      quoteBox.classList.add("fade-out");
-
-      setTimeout(() => {
-        const [user, quote, rating] = quotes[currentQuote];
-        quoteBox.innerHTML = `
-          <q>${quote}</q>
-          <div class="source">– ${user} (${rating}/10)</div>
-        `;
-        quoteBox.classList.remove("fade-out");
-        currentQuote = (currentQuote + 1) % quotes.length;
-      }, 500);
-    }
-
-    loadQuotes();
-  </script>
 
 </body>
 </html>
