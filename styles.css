@@ -1,234 +1,194 @@
-/* General resets and styling */
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* Reset & base */
+* {
   margin: 0;
-  background-color: #121212;
-  color: #d3d3d3;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0e0e0e;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Layout */
+section {
+  padding: 100px 20px;
   text-align: center;
 }
 
-/* Main Logo */
-.main-logo {
-  width: 160px;  /* Medium size */
-  margin: 20px auto 10px;
-  display: block;
+h1, h2, h3 {
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-/* Intro Text under logo */
-.intro-text {
-  font-size: 1.2em;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  line-height: 1.4;
+p {
+  color: #ccc;
+  line-height: 1.6;
 }
 
-/* Buttons base style */
-.btn {
-  background: linear-gradient(90deg, #7289da, #5b6eae);
-  box-shadow: 0 0 10px #7289da99;
-  padding: 12px 30px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-  border-radius: 28px;
-  display: inline-block;
-  cursor: pointer;
-  transition: background 0.3s ease;
+/* Header */
+header {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0e0e0e;
+  border-bottom: 2px solid #007bff;
 }
 
-.btn:hover {
-  background: linear-gradient(90deg, #5b6eae, #7289da);
-  box-shadow: 0 0 15px #7289dacc;
-}
-
-/* Discord Login Button specifically */
-.discord-login-btn {
-  margin-top: 20px;
-  padding: 14px 36px;
-  font-size: 1.1em;
-  font-weight: 700;
-  box-shadow: 0 0 15px #7289daaa;
-  border-radius: 30px;
-}
-
-/* Section Dividers (long gradient lines) */
-.section-divider {
-  height: 3px;
-  margin: 30px auto 30px;
-  max-width: 900px;
-  width: 90%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  box-shadow: 0 0 8px #0072ff99;
-}
-
-/* Larger divider below Discord login button */
-.large-divider {
-  height: 6px;
-  margin-top: 30px;
-  border-radius: 4px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  box-shadow: 0 0 12px #0072ffcc;
-}
-
-/* Smaller divider for under reviews heading */
-.small-divider {
-  height: 2px;
-  margin: 10px auto 20px;
-  max-width: 600px;
-  width: 60%;
-  border-radius: 3px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  box-shadow: 0 0 5px #0072ff99;
-}
-
-/* Player Reviews Section */
-#reviews h2,
-#join h2,
-#discord h2 {
-  font-weight: 700;
-  font-size: 2em;
+header h1 {
+  font-size: 3em;
   margin-bottom: 10px;
-  color: #73a8ff;
 }
 
-/* Quote Box */
-.quote-box {
-  max-width: 650px;
-  margin: 0 auto 25px;
-  background-color: #1a1a1a;
-  padding: 20px 30px;
-  border-radius: 12px;
-  border-left: 6px solid #3a84ff;
-  font-style: italic;
-  font-size: 1.1em;
-  color: #cbd6e3;
-  box-shadow: 0 0 12px #3a84ff55;
-  transition: opacity 0.5s ease;
+header p {
+  font-size: 1.2em;
+  color: #aaa;
+}
+
+/* Quote Section */
+#quotes {
+  background-color: #121212;
+  border-top: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
+  padding: 80px 20px;
+}
+
+#quoteBox {
+  font-size: 1.5em;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #8ab4f8;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  padding: 20px;
+}
+
+/* Discord Section */
+#discord {
+  padding: 100px 20px;
+  background-color: #0e0e0e;
+  border-top: 2px solid #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+#discord h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #ffffff;
   position: relative;
+  display: inline-block;
 }
 
-.quote-box q {
-  quotes: "“" "”" "‘" "’";
-}
-
-.quote-box q::before {
-  content: open-quote;
-}
-
-.quote-box q::after {
-  content: close-quote;
-}
-
-.source {
-  margin-top: 15px;
-  font-weight: 600;
-  color: #84a9ff;
-  font-style: normal;
-  font-size: 0.95em;
-}
-
-/* Fade animation for quotes */
-.fade-out {
-  opacity: 0;
+#discord h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 8px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border-radius: 2px;
 }
 
 /* Discord Box */
 .discord-box {
-  background-color: #1f2430;
-  max-width: 700px;
-  margin: 0 auto 30px;
-  padding: 25px 35px;
+  background-color: #1a1a1a;
   border-radius: 12px;
-  box-shadow: 0 0 18px #7289da99;
-  color: #dce3f1;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
+  border: 1px solid #007bff;
   text-align: left;
 }
 
 .discord-box h3 {
-  color: #89aaff;
-  margin-bottom: 15px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .discord-box ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .discord-box ul li {
-  margin: 8px 0;
-  padding-left: 20px;
-  position: relative;
-  font-weight: 600;
-  color: #a3baff;
+  margin-bottom: 10px;
+  color: #cfd8dc;
 }
 
-.discord-box ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #00aaff;
-  font-weight: bold;
+.discord-box p {
+  color: #cccccc;
+  margin-bottom: 20px;
 }
 
+/* Button */
 .discord-btn {
   display: inline-block;
-  margin-top: 15px;
-  background: linear-gradient(90deg, #7289da, #5b6eae);
-  box-shadow: 0 0 15px #7289da99;
-  padding: 12px 34px;
-  font-weight: 700;
-  border-radius: 28px;
-  color: #fff;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 .discord-btn:hover {
-  background: linear-gradient(90deg, #5b6eae, #7289da);
-  box-shadow: 0 0 20px #7289dacc;
+  background-color: #007bff;
+  color: #0e0e0e;
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
 }
 
+/* Bottom link */
 .reconnect {
-  margin-top: 15px;
   font-size: 0.9em;
-  color: #a2a9b8;
+  text-align: center;
+  margin-top: 20px;
+  color: #999;
 }
 
 .reconnect a {
-  color: #6791f5;
-  text-decoration: none;
-}
-
-.reconnect a:hover {
+  color: #8ab4f8;
   text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  margin: 40px 0 20px;
-  font-size: 0.85em;
-  color: #7a7f8b;
+  background-color: #0a0a0a;
+  padding: 30px 20px;
+  color: #777;
+  font-size: 0.9em;
+  text-align: center;
+  border-top: 1px solid #1a1a1a;
 }
 
-/* Responsive adjustments */
-@media (max-width: 700px) {
-  .main-logo {
-    width: 120px;
-  }
+/* Utility */
+a {
+  color: #8ab4f8;
+  text-decoration: none;
+}
 
-  .intro-text {
-    font-size: 1em;
-    padding: 0 15px;
-  }
+a:hover {
+  text-decoration: underline;
+}
 
-  .quote-box {
-    margin: 0 15px 25px;
-  }
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-  .discord-box {
-    margin: 0 15px 30px;
-  }
+button:hover {
+  background-color: #0056b3;
 }
