@@ -47,6 +47,43 @@ header p {
   color: #aaa;
 }
 
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: #1a1a1a;
+}
+
+.hero .logo {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
+
 /* Quote Section */
 #quotes {
   background-color: #121212;
