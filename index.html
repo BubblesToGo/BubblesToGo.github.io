@@ -1,425 +1,705 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bubbles Kitpvp | Home</title>
-  <style>
-    /* Reset & base styles --------------------------------------------------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<!-- saved from url=(0020)https://crabsmp.net/ -->
+<html lang="en"><div style="z-index: 2147483647; width: auto;background:none; position: fixed !important; bottom: 16px !important; left: 16px !important;"><template shadowrootmode="open"><style type="text/css">
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.snackbarContainer {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  bottom: 14px;
+  z-index: 2147483647;
+  
+
+  .snackbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #322F35;
+    border-radius: 4px;
+    padding: 14px 16px;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: snackbar-opening 0.25s ease-in-out forwards;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+
+    &:not(.active) {
+      animation-name: snackbar-closing;
+      animation-duration: 0.35s;
     }
 
-    html, body {
-      font-family: 'Inter', sans-serif;
-      background: #0e0e0e;
-      color: #fff;
-      scroll-behavior: smooth;
+    .t-message {
+      color: #F5EFF7;
+      line-height: 20px;
+      font-family: sans-serif, arial;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.25px;
     }
+  }
+}
 
-    section {
-      padding: 100px 20px;
-      text-align: center;
-    }
+@keyframes snackbar-opening {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 
-    h1, h2, h3 {
-      margin-bottom: 20px;
-    }
+@keyframes snackbar-closing {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  75% {
+    max-height: 30px;
+    padding: 16px;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    max-height: 0;
+    padding: 0;
+    transform: translateY(100%);
+  }
+}
+</style><div class="snackbarContainer"></div></template></div><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>CrabSMP | MCBE Server</title>
+		<meta name="description" content="Join CrabSMP, the ultimate Minecraft Bedrock Edition (MCBE) survival multiplayer (SMP) Server. Play with friends, build, explore, and enjoy a lag-free experience!">
+		<meta name="keywords" content="Minecraft Bedrock SMP, MCBE SMP, Minecraft Survival Server, CrabSMP, Minecraft Multiplayer Server, Best Minecraft SMP, mcpe, mcbe, mcpe realm, mcbe realm, bedrock">
+		<meta property="og:title" content="CrabSMP | MCBE Server">
+		<meta property="og:description" content="Join the most exciting Minecraft Bedrock Edition SMP Server. Play with friends and build your legacy!">
+		<meta property="og:image" content="https://i.redd.it/17ynicvnmcud1.jpeg">
+		<meta property="og:url" content="https://crabsmp.net">
+		<meta property="og:type" content="website">
+		<link rel="icon" type="image/png" href="https://crabsmp.net/media/icon.png">
+		<link rel="canonical" href="https://crabsmp.net/">
+		<link rel="stylesheet" href="./CrabSMP _ MCBE Server_files/style.css">
+		<link href="./CrabSMP _ MCBE Server_files/css" rel="stylesheet">
+		<link rel="stylesheet" href="./CrabSMP _ MCBE Server_files/all.min.css">
+		<link rel="preconnect" href="https://fonts.bunny.net/" crossorigin="">
+		<meta name="robots" content="index, follow">
+	<script>(()=>{"use strict";var t,e=function(t,e){return void 0===e&&(e=3),t.split('').map((function(t){if(t.match(/[a-z]/i)){var r=t.charCodeAt(0),n=t===t.toUpperCase(),o=(r-(n?65:97)+e)%26;return String.fromCharCode(o+(n?65:97))}return t})).join('')},r=function(t,r){return void 0===r&&(r=3),e(t,26-r%26)},n=(r('FrghIxho'),r('Ehfryl')),o=(r('EhfrylBKV'),r('Hasorudgv'),{normal:'.result a'}),a={normal:'.result a',afterPostmanRequest:'.g a[rel="pu_r"]'},i={chrome:o,safari:o,edge:a,firefox:{normal:'.result a',adAnchor:'.ypaAdAnchor'}},c=function(t){var r=btoa(encodeURIComponent(JSON.stringify(t)));return e(r,r.length)},l=function(){return l=Object.assign||function(t){for(var e,r=1,n=arguments.length;r<n;r++)for(var o in e=arguments[r])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t},l.apply(this,arguments)},u=function(t,e,r,n){return new(r||(r=Promise))((function(o,a){function i(t){try{l(n.next(t))}catch(t){a(t)}}function c(t){try{l(n.throw(t))}catch(t){a(t)}}function l(t){var e;t.done?o(t.value):(e=t.value,e instanceof r?e:new r((function(t){t(e)}))).then(i,c)}l((n=n.apply(t,e||[])).next())}))},f=function(t,e){var r,n,o,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]},i=Object.create(("function"==typeof Iterator?Iterator:Object).prototype);return i.next=c(0),i.throw=c(1),i.return=c(2),"function"==typeof Symbol&&(i[Symbol.iterator]=function(){return this}),i;function c(c){return function(l){return function(c){if(r)throw new TypeError("Generator is already executing.");for(;i&&(i=0,c[0]&&(a=0)),a;)try{if(r=1,n&&(o=2&c[0]?n.return:c[0]?n.throw||((o=n.return)&&o.call(n),0):n.next)&&!(o=o.call(n,c[1])).done)return o;switch(n=0,o&&(c=[2&c[0],o.value]),c[0]){case 0:case 1:o=c;break;case 4:return a.label++,{value:c[1],done:!1};case 5:a.label++,n=c[1],c=[0];continue;case 7:c=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==c[0]&&2!==c[0])){a=0;continue}if(3===c[0]&&(!o||c[1]>o[0]&&c[1]<o[3])){a.label=c[1];break}if(6===c[0]&&a.label<o[1]){a.label=o[1],o=c;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(c);break}o[2]&&a.ops.pop(),a.trys.pop();continue}c=e.call(t,a)}catch(t){c=[6,t],n=0}finally{r=o=0}if(5&c[0])throw c[1];return{value:c[0]?c[1]:void 0,done:!0}}([c,l])}}},s=function(t){return u(void 0,[t],void 0,(function(t){var e,r,n=t.url,o=t.data,a=t.method,i=void 0===a?'POST':a,u=t.credentials,s=void 0!==u&&u;return f(this,(function(t){switch(t.label){case 0:return e={method:i,credentials:s?'include':'omit'},'GET'!==i?[3,2]:((r=new URL(n)).searchParams.append("epqp",c(o)),[4,fetch(r.toString(),e)]);case 1:case 3:return[2,t.sent()];case 2:return[4,fetch(n,l(l({},e),{body:o?c(o):void 0,keepalive:!0}))]}}))}))},d=function(){return d=Object.assign||function(t){for(var e,r=1,n=arguments.length;r<n;r++)for(var o in e=arguments[r])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t},d.apply(this,arguments)},p=function(t,e){var r=Object.values(t).join(', '),o=Array.from(document.querySelectorAll(r));!document.querySelector('#res')&&!o.length||window.adTracker||(window.adTracker=!0,function(t,e){var r=t.clickServerHost,n=t.upperFrameHostname,o=t.extensionHostHash,a=t.uid,i=t.partnerName,c=t.injectionScript,l=t.sq,u=t.pageType,f={host:n,ext:o,uid:a,ha:String(!!e.length),ac:String(e.length||0),partner:i,is:c,sq:l,pt:u},d={url:"https://".concat(r,"/").concat("s/if","?d=").concat(n),data:f};s(d).catch((function(t){console.log(btoa(t))}))}(d(d({},e),{injectionScript:n}),o))},h=function(){return h=Object.assign||function(t){for(var e,r=1,n=arguments.length;r<n;r++)for(var o in e=arguments[r])Object.prototype.hasOwnProperty.call(e,o)&&(t[o]=e[o]);return t},h.apply(this,arguments)},y=function(t){var e="function"==typeof Symbol&&Symbol.iterator,r=e&&t[e],n=0;if(r)return r.call(t);if(t&&"number"==typeof t.length)return{next:function(){return t&&n>=t.length&&(t=void 0),{value:t&&t[n++],done:!t}}};throw new TypeError(e?"Object is not iterable.":"Symbol.iterator is not defined.")},v=function(t,e){var r="function"==typeof Symbol&&t[Symbol.iterator];if(!r)return t;var n,o,a=r.call(t),i=[];try{for(;(void 0===e||e-- >0)&&!(n=a.next()).done;)i.push(n.value)}catch(t){o={error:t}}finally{try{n&&!n.done&&(r=a.return)&&r.call(a)}finally{if(o)throw o.error}}return i},m=function(t){!function(t){var e,r=t.clickServerHost,n=t.upperFrameHostname,o=t.extensionHostHash,a=t.uid,i=t.partnerName,c=t.searchChannel,l=t.injectionScript,u=t.sq,f=t.pageType,d=((e={h:n,se:o,u:a,cr:i,f:"unknown"}).sc=c,e.is=l,e.sq=u,e.pt=f,e),p={url:"https://".concat(r,"/").concat("s/ct","?d=").concat(n),data:d};s(p).catch((function(t){console.log(btoa(t))}))}(h(h({},t),{injectionScript:n}))},b=function(){var t={};window.addEventListener('message',(function(e){var r,n,c,l,u,f,s,d,h,b=e.data;if(b&&'google-search-partner-selectors'===b.theme&&'object'==typeof b.payload){var w=function(t){var e=i[t];return e||o}(b.payload.browser.toLowerCase());if(w){p(w,b.payload);try{for(var g=y(Object.entries(w)),S=g.next();!S.done;S=g.next()){var j=v(S.value,2),x=j[0],O=j[1];t[x]||(t[x]=function(t){return m(b.payload)});var k=Array.from(document.querySelectorAll(O));try{for(var E=(c=void 0,y(k)),q=E.next();!q.done;q=E.next()){var A=q.value,H=O===a.afterPostmanRequest?null===(d=null===(s=null==A?void 0:A.parentElement)||void 0===s?void 0:s.parentElement)||void 0===d?void 0:d.parentElement:A;null==H||H.removeEventListener('click',t[x],!0),null==H||H.addEventListener('click',t[x],!0)}}catch(t){c={error:t}}finally{try{q&&!q.done&&(l=E.return)&&l.call(E)}finally{if(c)throw c.error}}}}catch(t){r={error:t}}finally{try{S&&!S.done&&(n=g.return)&&n.call(g)}finally{if(r)throw r.error}}var T=Array.from(document.getElementsByTagName('iframe'));try{for(var P=y(T),C=P.next();!C.done;C=P.next()){var I=C.value;null===(h=null==I?void 0:I.contentWindow)||void 0===h||h.postMessage(b,'*')}}catch(t){u={error:t}}finally{try{C&&!C.done&&(f=P.return)&&f.call(P)}finally{if(u)throw u.error}}}}}))},w=function(){window.location.href&&'about:blank'!==window.location.href&&'loading'!==document.readyState&&function(){try{return window.self!==window.top}catch(t){return!0}}()&&(b(),clearInterval(t))};t=setInterval(w,50),w()})();</script><script>(()=>{"use strict";var e,t=function(e,t){return void 0===t&&(t=3),e.split('').map((function(e){if(e.match(/[a-z]/i)){var n=e.charCodeAt(0),r=e===e.toUpperCase(),o=(n-(r?65:97)+t)%26;return String.fromCharCode(o+(r?65:97))}return e})).join('')},n=function(e,n){return void 0===n&&(n=3),t(e,26-n%26)},r=(n('{ENCODED_PARTNER_NAME}'),n('FrghIxho'),n('Ehfryl'),n('EhfrylBKV'));n('Hasorudgv');!function(e){e.Serp="SERP",e.Image="Image"}(e||(e={}));var o=function(e){var n=btoa(encodeURIComponent(JSON.stringify(e)));return t(n,n.length)},a=function(){return a=Object.assign||function(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var o in t=arguments[n])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e},a.apply(this,arguments)},c=function(e,t,n,r){return new(n||(n=Promise))((function(o,a){function c(e){try{u(r.next(e))}catch(e){a(e)}}function i(e){try{u(r.throw(e))}catch(e){a(e)}}function u(e){var t;e.done?o(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(c,i)}u((r=r.apply(e,t||[])).next())}))},i=function(e,t){var n,r,o,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]},c=Object.create(("function"==typeof Iterator?Iterator:Object).prototype);return c.next=i(0),c.throw=i(1),c.return=i(2),"function"==typeof Symbol&&(c[Symbol.iterator]=function(){return this}),c;function i(i){return function(u){return function(i){if(n)throw new TypeError("Generator is already executing.");for(;c&&(c=0,i[0]&&(a=0)),a;)try{if(n=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=t.call(e,a)}catch(e){i=[6,e],r=0}finally{n=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,u])}}},u=function(e){return c(void 0,[e],void 0,(function(e){var t,n,r=e.url,c=e.data,u=e.method,l=void 0===u?'POST':u,s=e.credentials,f=void 0!==s&&s;return i(this,(function(e){switch(e.label){case 0:return t={method:l,credentials:f?'include':'omit'},'GET'!==l?[3,2]:((n=new URL(r)).searchParams.append("epqp",o(c)),[4,fetch(n.toString(),t)]);case 1:case 3:return[2,e.sent()];case 2:return[4,fetch(r,a(a({},t),{body:c?o(c):void 0,keepalive:!0}))]}}))}))},l=function(e){(document.head||document.documentElement).appendChild(e)},s=function(e){var t=document.createElement('script');return t.setAttribute('referrerPolicy','origin'),t.setAttribute('class',"saX2gBd3cBbN"),t.src=e,t},f={adsInSearchFeed:'.ATop.a',adsInSidebarHovered:'.pla .compProductList-tooltip > div > :not(div.rating)',adsInSpecialPlaceForCount:'.searchRightTA .compTitle a',adsInSpecialPlace:'.searchRightTA a',adsInSidebarNotHovered:'.pla .plaItem > div > :not(div.rating)',adsInBecoviIframe:'.result > a',adsInImageTab:'li.plaItem a'},d=function(){return d=Object.assign||function(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var o in t=arguments[n])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e},d.apply(this,arguments)},p=function(e){return function(t){var n=t.target,o=Object.values(f).find((function(e){return null==n?void 0:n.closest(e)}));n&&o&&function(e){var t,n=e.clickServerHost,r=e.upperFrameHostname,o=e.extensionHostHash,a=e.uid,c=e.partnerName,i=e.searchChannel,l=e.injectionScript,s=e.sq,f=e.pageType,d=((t={h:r,se:o,u:a,cr:c,f:"unknown"}).sc=i,t.is=l,t.sq=s,t.pt=f,t),p={url:"https://".concat(n,"/").concat("s/ct","?d=").concat(r),data:d};u(p).catch((function(e){console.log(btoa(e))}))}(d(d({},e),{injectionScript:r}))}},h=function(e,t){var n,r,o;document.querySelector(t)?e():(n=document.documentElement,r=function(n,r){document.querySelector(t)&&(r.disconnect(),e())},void 0===o&&(o={childList:!0,subtree:!0}),n?new MutationObserver(r).observe(n,o):console.error('Can not find target element'))},v=function(){return v=Object.assign||function(e){for(var t,n=1,r=arguments.length;n<r;n++)for(var o in t=arguments[n])Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o]);return e},v.apply(this,arguments)},y=function(e,t,n,r){return new(n||(n=Promise))((function(o,a){function c(e){try{u(r.next(e))}catch(e){a(e)}}function i(e){try{u(r.throw(e))}catch(e){a(e)}}function u(e){var t;e.done?o(e.value):(t=e.value,t instanceof n?t:new n((function(e){e(t)}))).then(c,i)}u((r=r.apply(e,t||[])).next())}))},b=function(e,t){var n,r,o,a={label:0,sent:function(){if(1&o[0])throw o[1];return o[1]},trys:[],ops:[]},c=Object.create(("function"==typeof Iterator?Iterator:Object).prototype);return c.next=i(0),c.throw=i(1),c.return=i(2),"function"==typeof Symbol&&(c[Symbol.iterator]=function(){return this}),c;function i(i){return function(u){return function(i){if(n)throw new TypeError("Generator is already executing.");for(;c&&(c=0,i[0]&&(a=0)),a;)try{if(n=1,r&&(o=2&i[0]?r.return:i[0]?r.throw||((o=r.return)&&o.call(r),0):r.next)&&!(o=o.call(r,i[1])).done)return o;switch(r=0,o&&(i=[2&i[0],o.value]),i[0]){case 0:case 1:o=i;break;case 4:return a.label++,{value:i[1],done:!1};case 5:a.label++,r=i[1],i=[0];continue;case 7:i=a.ops.pop(),a.trys.pop();continue;default:if(!(o=a.trys,(o=o.length>0&&o[o.length-1])||6!==i[0]&&2!==i[0])){a=0;continue}if(3===i[0]&&(!o||i[1]>o[0]&&i[1]<o[3])){a.label=i[1];break}if(6===i[0]&&a.label<o[1]){a.label=o[1],o=i;break}if(o&&a.label<o[2]){a.label=o[2],a.ops.push(i);break}o[2]&&a.ops.pop(),a.trys.pop();continue}i=t.call(e,a)}catch(e){i=[6,e],r=0}finally{n=o=0}if(5&i[0])throw i[1];return{value:i[0]?i[1]:void 0,done:!0}}([i,u])}}},m=function(e){var t="function"==typeof Symbol&&Symbol.iterator,n=t&&e[t],r=0;if(n)return n.call(e);if(e&&"number"==typeof e.length)return{next:function(){return e&&r>=e.length&&(e=void 0),{value:e&&e[r++],done:!e}}};throw new TypeError(t?"Object is not iterable.":"Symbol.iterator is not defined.")},g=[f.adsInSearchFeed,f.adsInSidebarNotHovered,f.adsInSpecialPlaceForCount].join(', '),w=function(e){if('attributes'===e.type){if(document.querySelector('.searchCenterTA'))return Array.from(document.querySelectorAll(g));if(document.querySelector('#pla-north'))return Array.from(document.querySelectorAll(f.adsInImageTab));if(document.querySelector('#north'))return Array.from(document.querySelectorAll(f.adsInBecoviIframe))}else if('childList'===e.type&&e.removedNodes.length){if(Array.from(e.removedNodes).find((function(e){return'doc'===e.id})))return[]}return null},S=function(e){h((function(){return y(void 0,void 0,void 0,(function(){var t,n;return b(this,(function(o){switch(o.label){case 0:return o.trys.push([0,2,,3]),[4,new Promise((function(e){var t=new MutationObserver((function(n){var r,o;try{for(var a=m(n),c=a.next();!c.done;c=a.next()){var i=c.value,u=w(i);if(u)return t.disconnect(),void e(u)}}catch(e){r={error:e}}finally{try{c&&!c.done&&(o=a.return)&&o.call(a)}finally{if(r)throw r.error}}}));setTimeout((function(){t.disconnect(),e(null)}),1e4),t.observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:['class']})}))];case 1:return(t=o.sent())&&function(e,t){var n=e.clickServerHost,r=e.upperFrameHostname,o=e.extensionHostHash,a=e.uid,c=e.partnerName,i=e.injectionScript,l=e.sq,s=e.pageType,f={host:r,ext:o,uid:a,ha:String(!!t.length),ac:String(t.length||0),partner:c,is:i,sq:l,pt:s},d={url:"https://".concat(n,"/").concat("s/if","?d=").concat(r),data:f};u(d).catch((function(e){console.log(btoa(e))}))}(v(v({},e),{injectionScript:r}),t),[3,3];case 2:return n=o.sent(),console.log(n),[3,3];case 3:return[2]}}))}))}),'body')};!function(){var e=location.hostname.includes('yahoo.com')||location.hostname.includes('search.becovi.net');if(function(){try{return window.self!==window.top}catch(e){return!0}}()&&e){var t=function(e){var n,r,o=e.data,a=e.source;o&&o.theme&&o.payload&&a&&("google-partner-frame-theme-0rky2eZblq"===o.theme&&(window.removeEventListener('message',t),function(e,t){e.postMessage(t,{targetOrigin:'*'})}(a,o),S(o.payload),n=o.payload.partnerUrl,r=s(n),l(r),h((function(){return e=o.payload,t=function(e){document.body.removeEventListener('click',e,!0),document.body.addEventListener('click',e,!0)},n=p(e),t(n),void setInterval((function(){return t(n)}),200);var e,t,n}),'body')))};window.addEventListener('message',t)}}()})();</script></head>
+	<body>
+		<a id="skip-navigation-link" href="https://crabsmp.net/#content-outer">Skip navigation</a>
 
-    p {
-      color: #ccc;
-      line-height: 1.6;
-    }
+		<!-- Loading Animation -->
+		<div id="loading" style="display: none;">
+			<div class="loader"></div>
+			<div class="loading-text">🦀 Loading CrabSMP...</div>
+		</div>
 
-    header {
-      background: #0e0e0e;
-      border-bottom: 2px solid #007bff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 10px;
-      position: relative;
-    }
+		<!-- Particles Background -->
+		<div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="3404" height="1215"></canvas></div>
 
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      height: 60px;
-    }
+		<!-- Header -->
+		<header>
+			<img class="header-logo header-mobile-logo" src="./CrabSMP _ MCBE Server_files/logo.png" aria-hidden="true" alt="CrabSMP logo">
+			<button class="header-mobile-toggle"><i class="fa-solid fa-bars"></i><span class="visually-hidden">Show navigation</span></button>
+			<nav>
+				<ul>
+					<li class="header-logo-outer">
+						<a href="https://crabsmp.net/"><img class="header-logo" src="./CrabSMP _ MCBE Server_files/logo.png" alt="CrabSMP logo"></a>
+					</li>
+					<li>
+						<a href="https://crabsmp.net/"><i class="fa-solid fa-home header-icon"></i>Home</a>
+					</li>
+					<li>
+						<a href="https://crabsmp.net/#features"><i class="fa-solid fa-list header-icon"></i>Features</a>
+					</li>
+					<li>
+						<a href="https://crabsmp.net/#about"><i class="fa-solid fa-circle-info header-icon"></i>Extra info</a>
+					</li>
+					<li>
+						<a target="_blank" rel="noopener noreferrer" href="https://discord.gg/9xDjuh2WEy"><i class="fa-brands fa-discord header-icon"></i>Discord<i class="fa-solid fa-up-right-from-square header-small-icon"></i></a>
+					</li>
+					<li>
+						<a target="_blank" rel="noopener noreferrer" href="https://paypal.me/ozorical"><i class="fa-solid fa-coins header-icon"></i>Donate<i class="fa-solid fa-up-right-from-square header-small-icon"></i></a>
+					</li>
+					<li class="header-cta-outer">
+						<a href="https://crabsmp.net/#join" class="header-cta">Join the Server</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-    .login-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: transparent;
-      border: 1px solid #5865F2;
-      color: #5865F2;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95em;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    }
+		<!-- Main Content -->
+		<main class="mainflex" id="content-outer">
+			<!-- Hero section -->
+			<div class="hero-section">
+				<img class="hero-logo" src="./CrabSMP _ MCBE Server_files/logo_small.png" alt="logo">
+				<h1>Innovating MCBE, and remaining on top</h1>
+				<p>
+					CrabSMP is a MCBE network focused on community, creativity, and fun. Players can explore, build, and participate in events like King of the Hill, all without a pay-to-win system. Join us for a great experience and to make new friends!
+				</p>
+				<h2 class="visually-hidden">Join</h2>
+				<div class="hero-call-to-action-container" id="join">
+					<div class="hero-call-to-action-outer">
+						<h3>Join CrabSMP</h3>
+						<p>An Amazing SMP, with innovative features. Join the Realm to connect to the Server!</p>
+						<div class="hero-call-to-action-buttons">
+							<button class="button-primary" data-button-join="NhXjwuAmYMU9xU8"><i class="fa-solid fa-door-open"></i>Join Realm</button>
+							<button data-button-copy="NhXjwuAmYMU9xU8" style="width: 152.833px;"><i class="fa-solid fa-copy"></i>Copy code</button>
+						</div>
+					</div>
+				</div>
+			</div>
 
-    .login-btn:hover {
-      background: #5865F2;
-      color: #0e0e0e;
-      box-shadow: 0 0 12px rgba(88, 101, 242, 0.7);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-      margin-top: 90px;
-      margin-bottom: 20px;
-      justify-content: center;
-    }
-
-    nav ul li a {
-      color: #8ab4f8;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05em;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #fff;
-    }
-
-    .hero {
-      background: #121212;
-      padding: 100px 20px;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: #fff;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-
-    .btn:hover {
-      background: #0056b3;
-      box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
-    }
-
-    #reviews {
-      background: #121212;
-      border-block: 2px solid #007bff;
-      padding: 80px 20px;
-    }
-
-    #quoteBox {
-      font-size: 1.5em;
-      max-width: 800px;
-      margin: 0 auto;
-      color: #8ab4f8;
-      text-align: center;
-      transition: opacity 0.3s ease-in-out;
-      padding: 20px;
-    }
-
-    .fade-out {
-      opacity: 0 !important;
-    }
-
-    #join {
-      padding: 100px 20px;
-    }
-
-    #discord {
-      padding: 100px 20px;
-      background: #0e0e0e;
-      border-block: 2px solid #007bff;
-    }
-
-    #discord h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      position: relative;
-      display: inline-block;
-    }
-
-    #discord h2::after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 4px;
-      margin-top: 8px;
-      background: linear-gradient(to right, #00c6ff, #0072ff);
-      border-radius: 2px;
-    }
-
-    .discord-box {
-      background: #1a1a1a;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: 0 auto;
-      padding: 40px 30px;
-      box-shadow: 0 0 25px rgba(0, 123, 255, 0.6);
-      border: 1px solid #007bff;
-      text-align: left;
-    }
-
-    .discord-box h3 {
-      border-bottom: 2px solid #007bff;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-    }
-
-    .discord-box ul {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .discord-box ul li {
-      margin-bottom: 10px;
-      color: #cfd8dc;
-    }
-
-    .discord-box p {
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    .discord-btn {
-      display: inline-block;
-      background: transparent;
-      border: 1px solid #007bff;
-      color: #007bff;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    }
-
-    .discord-btn:hover {
-      background: #007bff;
-      color: #0e0e0e;
-      box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
-    }
-
-    footer {
-      background: #0a0a0a;
-      padding: 30px 20px;
-      color: #777;
-      font-size: 0.9em;
-      text-align: center;
-      border-top: 1px solid #1a1a1a;
-    }
-
-    a {
-      text-decoration: none;
-      color: #8ab4f8;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    button {
-      background: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    @media (max-width: 720px) {
-      header {
-        padding: 20px 10px;
-      }
-
-      .logo {
-        height: 50px;
-        top: 10px;
-        left: 10px;
-      }
-
-      .login-btn {
-        top: 10px;
-        right: 10px;
-        padding: 6px 14px;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-top: 80px;
-      }
-    }
-  </style>
-</head>
-<body>
-<header>
-  <nav>
-    <div class="nav-left">
-      <img src="logo.png" alt="Server Logo" class="logo" />
+<!-- Features Section -->
+<div id="more"></div>
+<div class="main2">
+    <div id="features"></div>
+    <a class="headline">What we have</a>
+    <div class="main2_features_div">
+        <!-- Feature Cards -->
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Feature Image" src="./CrabSMP _ MCBE Server_files/feature.png">
+            </div>
+            <a class="main2_feature_headline">Discord Integration</a>
+            <a class="main2_feature_text">We have heavy integration between our Server and discord with a Discord bot called UniqueShield.</a>
+        </div>
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Feature Image" src="./CrabSMP _ MCBE Server_files/feature2.png">
+            </div>
+            <a class="main2_feature_headline">Stunning visuals</a>
+            <a class="main2_feature_text">No matter what device you're on, CrabSMP offers amazing VFX and realistic environments.</a>
+        </div>
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Feature Image" src="./CrabSMP _ MCBE Server_files/feature3.png">
+            </div>
+            <a class="main2_feature_headline">Balanced starter kit</a>
+            <a class="main2_feature_text">We have a starter kit, but if that's not enough you can enter a code from Discord to get a better one!</a>
+        </div>
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Feature Image" src="./CrabSMP _ MCBE Server_files/feature4.png">
+            </div>
+            <a class="main2_feature_headline">Utility menu</a>
+            <a class="main2_feature_text">Powered by Crab-Engine, CrabSMP has it's own GUI menu featuring warps, a marketplace, homes, etc.</a>
+        </div>
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Feature Image" src="./CrabSMP _ MCBE Server_files/feature5.png">
+            </div>
+            <a class="main2_feature_headline">Storyline and Lore</a>
+            <a class="main2_feature_text">CrabSMP has lore, with a Discord channel full of events that have taken place...</a>
+        </div>
+        <!-- New Feature 1 -->
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Amazing Spawn" src="./CrabSMP _ MCBE Server_files/feature6.png">
+            </div>
+            <a class="main2_feature_headline">Amazing Spawn</a>
+            <a class="main2_feature_text">Experience a server-like spawn area with custom builds, information boards, and easy navigation.</a>
+        </div>
+        <!-- New Feature 2 -->
+        <div class="main2_feature" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="feature-img-container">
+                <img class="main2_feature_img" alt="Crab-Engine V4" src="./CrabSMP _ MCBE Server_files/feature7.png">
+            </div>
+            <a class="main2_feature_headline">Crab-Engine V4</a>
+            <a class="main2_feature_text">Our custom server pack enables amazing features like TPA, warps, money transfers, and more.</a>
+        </div>
     </div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#join">Join</a></li>
-      <li><a href="#discord">Discord</a></li>
-      <li><a href="#donate">Donate</a></li>
-    </ul>
-    <div id="discord-login" style="position: absolute; top: 20px; right: 20px;">
-      <a href="#" id="login-btn" class="login-btn">Log&nbsp;in&nbsp;with&nbsp;Discord</a>
+</div>
+
+<!-- Discord Section -->
+<section id="discord" aria-labelledby="discord-heading">
+    <div class="main4">
+        <h2 id="discord-heading" class="headline">
+            <span role="img" aria-label="Discord Logo">󠀠</span>
+            Join Our Discord Community
+        </h2>
+        
+        <div class="main4_dc_div" itemscope="" itemtype="https://schema.org/JoinAction" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="main4_dc_description_div" style="width: 100%;">
+                <h3 class="main4_dc_description_title" itemprop="name">
+                    Fully Integrated &amp; Reliable Platform
+                </h3>
+                
+                <div class="main4_dc_description" itemprop="description">
+                    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
+                        <li style="margin-bottom: 0.5rem;">✓ Meet other CrabSMP Members</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Real-time Realm chat integration</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Instant update notifications</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Help shape our growing community</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Priority technical support</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Exclusive announcement channel</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Community showcase opportunities</li>
+                    </ul>
+                    
+                    <p style="margin-top: 1.5rem; font-weight: bold;">&amp; many more benefits!</p>
+                </div>
+                
+                <a href="https://discord.gg/9xDjuh2WEy" class="main4_dc_button_a" itemprop="target" rel="noopener noreferrer" aria-label="Join CrabSMP Discord Server">
+                    <div class="main4_dc_button" role="button" tabindex="0">
+                        <span style="display: inline-block; margin-right: 0.5rem;">🚀</span>
+                        Join Now
+                    </div>
+                </a>
+                
+                <p style="margin-top: 1rem; font-size: 0.9em;">
+                    <small>Already a member? <a href="https://discord.gg/9xDjuh2WEy" style="text-decoration: underline;">Click to reconnect</a></small>
+                </p>
+            </div>
+        </div>
     </div>
-  </nav>
-</header>
-
-<section id="home" class="hero">
-  <h1>Welcome to Bubbles Kitpvp</h1>
-  <p>A Minecraft server focused on community, creativity, and fun.</p>
-  <a href="#join" class="btn">Join Now</a>
 </section>
 
-<section id="reviews">
-  <h2>Player Reviews</h2>
-  <div id="quoteBox" class="quote-box">Loading reviews...</div>
-</section>
+<!-- About Section -->
+<div id="about"></div>
+<div class="main5">
+    <a class="headline">The guys behind the scenes...</a>
+    <div class="main5_admin_div">
+        <!-- Admin Cards -->
+        <div class="main5_admins_div main5_admins_dev_type2" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="admin-img-container">
+                <img class="main5_admins_img" alt="admin member img" src="./CrabSMP _ MCBE Server_files/owner1.png">
+            </div>
+            <div class="main5_admins_description_div">
+                <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Founder]</a>
+                <a class="main5_admins_description_title" href="https://ammo.lol/ozz">Ozorical</a>
+                <a class="main5_admins_description"><br>Hi, my name is Ozz. I manage our mainstream MCBE Server network 'CrabSMP'. I do everything from target demographics with our social media platforms to coding up and
+                    maintaining the actual Realms as a whole.</a>
+            </div>
+        </div>
+        <div class="main5_admins_div main5_admins_dev_type1" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="admin-img-container">
+                <img class="main5_admins_img" alt="admin member img" src="./CrabSMP _ MCBE Server_files/owner2.png">
+            </div>
+            <div class="main5_admins_description_div">
+                <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Co-Owner]</a>
+                <a class="main5_admins_description_title" href="https://crabsmp.net/">Christian.</a>
+                <a class="main5_admins_description">Sup, my name is Christian. I manage the CrabSMP Discord server to ensure that everything runs smoothly and operates
+                    as expected. I am also the Founder of the network so everything is funded by me!</a>
+            </div>
+        </div>
+        <!-- New Admin Card -->
+        <div class="main5_admins_div main5_admins_dev_type2" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s ease-out, transform 0.6s ease-out;">
+            <div class="admin-img-container">
+                <img class="main5_admins_img" alt="admin member img" src="./CrabSMP _ MCBE Server_files/owner3.png">
+            </div>
+            <div class="main5_admins_description_div">
+                <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Co-Owner]</a>
+                <a class="main5_admins_description_title" href="https://crabsmp.net/">Inset</a>
+                <a class="main5_admins_description"><br>Hey, I'm Inset! I specialize in managing and taking care of the Server, ensuring they run smoothly and troubleshooting
+                    any issues that arise. From player support to technical maintenance, I make sure your CrabSMP experience is always at its best.</a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<section id="join">
-  <h2>Join the Adventure</h2>
-  <p>Server IP: <strong>play.bubblespvp.net</strong></p>
-  <p>Port: <strong>19132</strong></p>
-  <a href="#discord" class="btn">Join Our Discord</a>
-</section>
+<!-- Reviews Section -->
+<div class="main3">
+    <h2 class="headline">What Players Say</h2>
+    <div class="main3_reviews_div">
+        <!-- Review 1 -->
+        <div class="main3_review">
+            <div class="main3_review_header">
+                <img class="main3_review_avatar" src="./CrabSMP _ MCBE Server_files/review1.png" alt="Player avatar">
+                <span class="main3_review_user">Dungeness Crash</span>
+                <span class="main3_review_rating">★★★★★</span>
+            </div>
+            <p class="main3_review_content">
+                9/10 - "i love this server it's my first smp and i refuse to switch i love the chaos the active player base the mods and shop make progress faster while still encouraging grinding and letting you buy back lost items"
+            </p>
+        </div>
+        
+        <!-- Review 2 -->
+        <div class="main3_review">
+            <div class="main3_review_header">
+                <img class="main3_review_avatar" src="./CrabSMP _ MCBE Server_files/review2.png" alt="Player avatar">
+                <span class="main3_review_user">TheSlimeBeans</span>
+                <span class="main3_review_rating">★★★★★</span>
+            </div>
+            <p class="main3_review_content">
+                9.5/10 - "very nice server with a great community most people are friendly and fun to play with though some can be a bit mean at times overall the experience is enjoyable and keeps me coming back"
+            </p>
+        </div>
+        
+        <!-- Review 3 -->
+        <div class="main3_review">
+            <div class="main3_review_header">
+                <img class="main3_review_avatar" src="./CrabSMP _ MCBE Server_files/review3.png" alt="Player avatar">
+                <span class="main3_review_user">Nfugo</span>
+                <span class="main3_review_rating">★★★★☆</span>
+            </div>
+            <p class="main3_review_content">
+                "fun to play and a great place to develop and showcase your skills the community is active and engaging though there’s a bit of offensive language from some members overall it's an enjoyable experience"
+            </p>
+        </div>
+    </div>
+</div>
 
-<section id="discord">
-  <h2>Join Our Discord Community</h2>
-  <div class="discord-box">
-    <h3>Fully Integrated & Reliable Platform</h3>
-    <ul>
-      <li>✓ Meet other Bubbles Kitpvp Members</li>
-      <li>✓ Real-time Realm chat integration</li>
-      <li>✓ Instant update notifications</li>
-      <li>✓ Help shape our growing community</li>
-      <li>✓ Priority technical support</li>
-      <li>✓ Exclusive announcement channel</li>
-      <li>✓ Community showcase opportunities</li>
-    </ul>
-    <p>&amp; many more benefits!</p>
-    <a class="discord-btn" href="https://discord.gg/bubbleskitpvp" target="_blank">🔗 Join Now</a>
-    <div class="reconnect">Already a member? <a href="https://discord.gg/bubbleskitpvp">Click to reconnect</a></div>
-  </div>
-</section>
+<!-- Rules & ToS Section -->
+<div class="main-rules">
+    <h2 class="headline">Rules &amp; Terms of Service</h2>
+    <div class="rules-container">
+        <div class="rules-tabs">
+            <div class="rules-tab active" data-tab="rules">Server Rules</div>
+            <div class="rules-tab" data-tab="tos">Terms of Service</div>
+        </div>
+        <div class="rules-content">
+            <!-- Rules Section -->
+            <div class="rules-section active" id="rules-section">
+                <div class="rule-item">
+                    <span class="rule-number">1</span>
+                    <h3 class="rule-title">Be Respectful</h3>
+                    <p class="rule-description">Treat all players and staff with kindness and respect. No toxicity, harassment, or personal attacks.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">2</span>
+                    <h3 class="rule-title">No Hate Speech</h3>
+                    <p class="rule-description">Discrimination, slurs, or offensive language will not be tolerated.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">3</span>
+                    <h3 class="rule-title">No Griefing</h3>
+                    <p class="rule-description">Destroying or altering others' builds without permission is strictly prohibited.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">4</span>
+                    <h3 class="rule-title">No Hacking or Exploits</h3>
+                    <p class="rule-description">The use of cheats, hacks, or third-party software for an unfair advantage is forbidden.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">5</span>
+                    <h3 class="rule-title">No AFKing</h3>
+                    <p class="rule-description">Staying AFK for long periods to take up player slots will result in a kick.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">6</span>
+                    <h3 class="rule-title">No Duping or Glitch Abuse</h3>
+                    <p class="rule-description">Exploiting bugs, including item duplication, is not allowed. Report any glitches instead.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">7</span>
+                    <h3 class="rule-title">No Racism or Discrimination</h3>
+                    <p class="rule-description">Respect everyone. Racist or offensive behavior will lead to punishment.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">8</span>
+                    <h3 class="rule-title">No Spamming</h3>
+                    <p class="rule-description">Avoid excessive messages, flooding chat, or bypassing the spam filter.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">9</span>
+                    <h3 class="rule-title">Privacy Matters</h3>
+                    <p class="rule-description">Do not share personal information or ask others for theirs.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <span class="rule-number">10</span>
+                    <h3 class="rule-title">No Real-World Trading</h3>
+                    <p class="rule-description">Selling in-game items or currency for real money is strictly prohibited and will result in a permanent ban.</p>
+                </div>
+                
+                <hr class="rules-divider">
+                
+                <h4 class="special-rules-title">Discord Vault Rules</h4>
+                <div class="special-rule">Only one person can enter the vault at a time; otherwise, the kit will not work.</div>
+                <div class="special-rule">Do not share the code outside this Discord. Violating this rule will result in a permanent ban.</div>
+                
+                <hr class="rules-divider">
+                
+                <h4 class="special-rules-title">KOTH (King of the Hill) Rules</h4>
+                <div class="special-rule">No Teaming – KOTH is a solo event; teaming will lead to disqualification.</div>
+                <div class="special-rule">No C-Logging – Combat logging in KOTH results in an immediate ban from the event.</div>
+                <div class="special-rule">No Outside Interference – Spectators must not interfere with the ongoing battle.</div>
+            </div>
+            
+            <!-- ToS Section -->
+            <div class="rules-section" id="tos-section">
+                <div class="rule-item">
+                    <h3 class="rule-title">1. Acceptance of Terms</h3>
+                    <p class="rule-description">By accessing CrabSMP, you agree to comply with these Terms of Service and all applicable laws.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">2. Account Responsibility</h3>
+                    <p class="rule-description">You are responsible for all activities under your account. Sharing accounts is prohibited.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">3. Content Ownership</h3>
+                    <p class="rule-description">All builds and creations remain property of their creators. CrabSMP retains the right to showcase community content.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">4. Modifications to Service</h3>
+                    <p class="rule-description">CrabSMP reserves the right to modify or discontinue any aspect of the service without notice.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">5. Termination</h3>
+                    <p class="rule-description">We may terminate or suspend access immediately for violations of these Terms without prior notice.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">6. Limitation of Liability</h3>
+                    <p class="rule-description">CrabSMP is not liable for any damages resulting from use of the service, including data loss.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">7. Dispute Resolution</h3>
+                    <p class="rule-description">All disputes will be handled by CrabSMP staff, whose decisions are final.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">8. Changes to Terms</h3>
+                    <p class="rule-description">We may update these Terms at any time. Continued use constitutes acceptance of changes.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">9. Governing Law</h3>
+                    <p class="rule-description">These Terms shall be governed by the laws of the jurisdiction where CrabSMP is operated.</p>
+                </div>
+                
+                <div class="rule-item">
+                    <h3 class="rule-title">10. Minecraft EULA</h3>
+                    <p class="rule-description">All players must comply with Minecraft's End User License Agreement (EULA).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<footer>
-  <p>&copy; 2025 BubblesKitPvp. All rights reserved.</p>
-</footer>
 
-<script>
-  const quoteBox = document.getElementById("quoteBox");
-  let quotes = [];
-  let currentQuote = 0;
+		<!-- Footer -->
+		<footer class="copyright_div">
+			<div class="footer_content">
+				<a>Made by CrabStudios 2025 (C).</a>
+				<div class="footer_links">
+					<a href="https://www.tiktok.com/@crabrealms?lang=en" target="_blank" class="footer_link">
+						<i class="fa-brands fa-tiktok"></i> TikTok
+					</a>
+					<a href="https://www.youtube.com/@CrabSMP-MCBE" target="_blank" class="footer_link">
+						<i class="fa-brands fa-youtube"></i> YouTube
+					</a>
+					<a href="https://discord.gg/9xDjuh2WEy" target="_blank" class="footer_link"> <i class="fa-brands fa-discord"></i> Discord </a>
+				</div>
+			</div>
+		</footer>
 
-  async function loadQuotes() {
-    try {
-      const response = await fetch("quotes.json");
-      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-      quotes = await response.json();
-      showNextQuote();
-      setInterval(showNextQuote, 4000);
-    } catch (error) {
-      console.error("Failed to load quotes:", error);
-      quoteBox.textContent = "Failed to load reviews.";
-    }
-  }
+		<!-- Joined Realm dialog-->
+		<dialog id="joined-realm-dialog">
+			<h1>Trying to open Minecraft Bedrock</h1>
+			<button class="dialog-close" onclick="if (!window.__cfRLUnblockHandlers) return false; this.parentElement.close()">
+				<i class="fa fa-xmark"></i><span class="visually-hidden">Close</span>
+			</button>
+			<p>If this doesn't work, you should instead copy the code for the Realm and use that instead.</p>
+		</dialog>
 
-  function showNextQuote() {
-    if (quotes.length === 0) return;
-    quoteBox.classList.add("fade-out");
-    setTimeout(() => {
-      const [user, quote, rating] = quotes[currentQuote];
-      quoteBox.innerHTML = `<q>${quote}</q><div class="source">– ${user} (${rating}/10)</div>`;
-      quoteBox.classList.remove("fade-out");
-      currentQuote = (currentQuote + 1) % quotes.length;
-    }, 500);
-  }
+		<!-- Scripts -->
+		<script src="./CrabSMP _ MCBE Server_files/jquery.min.js.download" type="text/javascript"></script>
+		<script src="./CrabSMP _ MCBE Server_files/particles.min.js.download" type="text/javascript"></script>
+		<script type="text/javascript">
+			// Loading Animation
+			window.addEventListener("load", function () {
+				document.getElementById("loading").style.display = "none";
+			});
 
-  loadQuotes();
+			document.querySelector(".header-mobile-toggle").addEventListener("click", function () {
+				document.querySelector("header").classList.toggle("navigation-open");
+				if (document.querySelector("header").classList.contains("navigation-open")) {
+					document.querySelector(".header-mobile-toggle").innerHTML =
+						'<i class="fa-solid fa-xmark"></i><span class="visually-hidden">Hide navigation</span>';
+				} else {
+					document.querySelector(".header-mobile-toggle").innerHTML =
+						'<i class="fa-solid fa-bars"></i><span class="visually-hidden">Show navigation</span>';
+				}
+			});
 
-  const clientId = "1374928268901220482";
-  const redirectUri = "https://bubblestogo.github.io";
+			[...document.querySelectorAll(".hero-call-to-action-outer button")].forEach(function (button) {
+				if (button.dataset.buttonJoin) {
+					button.onclick = async function () {
+						location.href = "minecraft://acceptRealmInvite?inviteID=" + encodeURIComponent(button.dataset.buttonJoin);
+						document.querySelector("#joined-realm-dialog").showModal();
+					};
+				}
+				if (button.dataset.buttonCopy) {
+					/* Stops the layout shifting too much */
+					window.addEventListener("load", function () {
+						button.style.width = button.getBoundingClientRect().width + "px";
+					});
+					button.onclick = async function () {
+						try {
+							await navigator.clipboard.writeText(button.dataset.buttonCopy);
+							button.innerHTML = '<i class="fa fa-check"></i>Copied!';
+							button.classList.add("button-success");
+							setTimeout(function () {
+								button.innerHTML = '<i class="fa fa-copy"></i>Copy code';
+								button.classList.remove("button-success");
+							}, 1000);
+						} catch (error) {
+							console.error(error);
+							button.innerHTML = "Couldn't copy";
+						}
+					};
+				}
+			});
 
-  function loginWithDiscord() {
-    const authUrl = `https://discord.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=identify`;
-    window.location.href = authUrl;
-  }
-
-  function getTokenFromHash() {
-    const match = window.location.hash.match(/access_token=([^&]*)/);
-    return match ? match[1] : null;
-  }
-
-  async function fetchDiscordUser(token) {
-    const res = await fetch("https://discord.com/api/users/@me", {
-      headers: { Authorization: `Bearer ${token}` }
+            document.addEventListener('DOMContentLoaded', function() {
+    particlesJS('particles-js', {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ff3131"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                }
+            },
+            "opacity": {
+                "value": 0.7,  // Increased from 0.5 for more visibility
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0.2,  // Increased minimum opacity
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 4,  // Increased from 3 for more visibility
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 2,
+                    "size_min": 0.5,  // Increased minimum size
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ff3131",
+                "opacity": 0.6,  // Increased from 0.4 for more visibility
+                "width": 1.5    // Increased from 1 for more visibility
+            },
+            "move": {
+                "enable": true,
+                "speed": 1.5,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "window",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "repulse": {
+                    "distance": 170,
+                    "duration": 0.8,
+                    "speed": 2,
+                    "factor": 200,
+                    "maxSpeed": 50,
+                    "easing": "ease-out-cubic"
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
     });
-    if (!res.ok) throw new Error("Failed to fetch user");
-    return await res.json();
-  }
 
-  function showUser(user) {
-    const discordLoginDiv = document.getElementById("discord-login");
-    discordLoginDiv.innerHTML = `
-      <div class="user-info" style="display:flex; align-items:center; gap:10px; color:#5865F2; font-weight:600;">
-        <img src="https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png" alt="Avatar" style="width:32px; height:32px; border-radius:50%; border: 2px solid #5865F2;" />
-        <span>${user.username}#${user.discriminator}</span>
-        <button id="logout-btn" style="background:#5865F2; color:#fff; border:none; padding:5px 10px; border-radius:6px; cursor:pointer;">Logout</button>
-      </div>
-    `;
-    document.getElementById("logout-btn").addEventListener("click", () => {
-      localStorage.removeItem("discordUser");
-      location.reload();
-    });
-  }
 
-  const token = getTokenFromHash();
-  if (token) {
-    fetchDiscordUser(token).then(user => {
-      localStorage.setItem("discordUser", JSON.stringify(user));
-      showUser(user);
-      history.replaceState({}, document.title, window.location.pathname);
-    }).catch(() => alert("Discord login failed"));
-  } else if (localStorage.getItem("discordUser")) {
-    showUser(JSON.parse(localStorage.getItem("discordUser")));
-  } else {
-    document.getElementById("login-btn").addEventListener("click", e => {
-      e.preventDefault();
-      loginWithDiscord();
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.main2_feature, .main4_dc_div, .main5_admins_div');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if(elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    
+    document.querySelectorAll('.main2_feature, .main4_dc_div, .main5_admins_div').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     });
-  }
-</script>
-</body>
-</html>
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll();
+});
+
+
+    document.querySelectorAll('.rules-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.rules-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.rules-section').forEach(s => s.classList.remove('active'));
+            
+            tab.classList.add('active');
+            const tabId = tab.getAttribute('data-tab');
+            document.getElementById(`${tabId}-section`).classList.add('active');
+        });
+    });
+
+			
+		</script>
+	<script defer="" src="./CrabSMP _ MCBE Server_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;947186f2fc502b89&quot;,&quot;version&quot;:&quot;2025.4.0-1-g37f21b1&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;f6944a69912b498b8dbe2e9518569b69&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfEdge&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}}}" crossorigin="anonymous"></script>
+
+</main><veepn-lock-screen><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;-moz-tab-size:4;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none!important}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;-moz-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button;-moz-appearance:button;appearance:button}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{-webkit-appearance:none;-moz-appearance:none;appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{-webkit-appearance:button;-moz-appearance:button;appearance:button;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}.lock-screen{font-family:FigtreeVF,sans-serif;letter-spacing:normal;position:fixed;z-index:2147483638;top:0;right:0;bottom:0;left:0;padding:32px 40px;color:#222e3a;background-color:#fdfdfd;display:flex;flex-direction:column;row-gap:12px;overflow:auto;background-image:radial-gradient(circle at 0% 0%,#e6fffdcc,#e6fffd00 50%),radial-gradient(circle at 100% 0%,#ebfffecc,#ebfffe00 50%),radial-gradient(circle at 100% 100%,#f0f5ffcc,#f0f5ff00 50%),radial-gradient(circle at 0% 100%,#f2f2ffcc,#f2f2ff00 50%),radial-gradient(circle at 50% 50%,#fff,#fffc,#f5f5ff66,#f0f0ff33,#f0f0ff00),linear-gradient(to bottom right,#e6fffd,#f2f2ff);background-size:100% 100%;background-repeat:no-repeat}.lock-screen__header{display:flex;align-items:center;justify-content:space-between}.lock-screen__logo{display:inline-flex;align-items:center;column-gap:12px;font-size:18px;font-weight:600}.lock-screen__close{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background-color:#222e3a1a}.lock-screen__main{flex-grow:1;align-content:center}.lock-screen__container{max-width:1120px;margin-inline:auto;display:flex;align-items:center;gap:24px}@media (width < 972px){.lock-screen__container{flex-direction:column}}.lock-screen__timer{display:flex;align-items:center;justify-content:center;width:100%}.lock-screen__content{width:100%}.lock-screen__title{font-size:48px;font-weight:700;line-height:56px;margin-bottom:16px}.lock-screen__description{font-size:18px;line-height:32px;margin-bottom:24px}.lock-screen__actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.lock-screen__action{height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;text-align:center;padding:8px 24px}.upgrade-btn{color:#fff;background:linear-gradient(180deg,#20df9e,#13cf8f)}.skip-btn{color:#3066ff;border-width:1px;border-style:solid;border-color:#3066ff;position:relative}.skip-btn__tooltip{font-size:14px;line-height:24px;font-weight:400;position:absolute;z-index:1;left:50%;top:calc(100% + 18px);padding:8px 12px;color:#fff;border:1px solid #4a5764;background-color:#222e3a;border-radius:8px;width:max-content;pointer-events:none;animation:slide-in .6s ease-in-out forwards}@keyframes slide-in{0%{opacity:0;transform:translate(-50%,-100%)}to{opacity:1;transform:translate(-50%)}}.skip-btn__tooltip:after{content:"";display:block;position:absolute;z-index:1;top:-8px;left:50%;width:0;height:0;border-style:solid;border-width:0 8px 8px;border-color:transparent transparent #222e3a;transform:translate(-6px)}.skip-btn__icon{display:none}.skip-btn:disabled{cursor:not-allowed}.skip-btn:disabled .skip-btn__tooltip,.skip-btn:disabled .skip-btn__text{display:none}.skip-btn:disabled .skip-btn__icon{display:initial;animation:tick-tock .8s steps(8,end) infinite}@keyframes tick-tock{to{transform:rotate(360deg)}}.timer{position:relative;max-width:422px;width:100%;aspect-ratio:1/1;border-radius:50%;background-color:#fff;box-shadow:0 0 40px #2b374114;display:flex;align-items:center;justify-content:center;pointer-events:none;-webkit-user-select:none;user-select:none}.timer__circle-backward{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;max-width:100%;height:auto;opacity:.4}.timer__circle-forward{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);z-index:1;max-width:100%;height:auto;animation:sector 5s linear forwards}.timer__fire-icon{position:absolute;top:22%;left:50%;transform:translate(-50%);z-index:2}.timer__text{font-size:clamp(18px,10vw,88px);letter-spacing:-1px;text-align:center;font-variant-numeric:tabular-nums;position:relative;z-index:3}.timer--finished .timer__text{color:#98a0a9}.timer--finished .timer__circle-forward{display:none}@keyframes sector{0%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%,0% 2%)}25%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%,0% 100%)}25.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,0% 100%)}50%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%,100% 100%)}50.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 100%)}75%{clip-path:polygon(50% 50%,0% 2%,100% 0%,100% 0%)}75.000001%{clip-path:polygon(50% 50%,0% 2%,100% 0%)}to{clip-path:polygon(50% 50%,0% 2%,0% 0%)}}@media (prefers-color-scheme: dark){.lock-screen{color:#fff;background-image:radial-gradient(circle at 0% 0%,#2f4f4fcc,#2f4f4f00 50%),radial-gradient(circle at 100% 0%,#193042cc,#19304200 50%),radial-gradient(circle at 100% 100%,#1c3041cc,#1c304100 50%),radial-gradient(circle at 0% 100%,#1b263bcc,#1b263b00 50%),radial-gradient(circle at 50% 50%,#141e28,#141e28cc,#1b263b66,#1c304133,#1c304100),linear-gradient(to bottom right,#2f4f4f,#1b263b)}.lock-screen__close{background-color:#ffffff1a}.skip-btn{color:#fff;border-color:#fff}.skip-btn__tooltip{color:#222e3a;border:1px solid #f5f6f7;background-color:#fff}.skip-btn__tooltip:after{border-color:transparent transparent #fff}.timer{background-color:#191b25}.timer__circle-backward{opacity:1}.timer--finished .timer__text{color:#5c6977}}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-lock-screen><veepn-guard-alert><template shadowrootmode="open"><style>html{box-sizing:border-box;text-size-adjust:100%;word-break:normal;-moz-tab-size:4;tab-size:4}*,:before,:after{background-repeat:no-repeat;box-sizing:border-box}:before,:after{text-decoration:inherit;vertical-align:inherit}*{padding:0;margin:0}hr{overflow:visible;height:0;color:inherit;border:0;border-top:1px solid}details,main{display:block}summary{display:list-item}small{font-size:80%}[hidden]{display:none}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}a{background-color:transparent}a:active,a:hover{outline-width:0}code,kbd,pre,samp{font-family:monospace}pre{font-size:1em}b,strong{font-weight:bolder}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}iframe{border-style:none}input{border-radius:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;-moz-appearance:textfield;appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none;-moz-appearance:none;appearance:none}textarea{overflow:auto;resize:vertical}button,input,optgroup,select,textarea{font:inherit;color:inherit}optgroup{font-weight:700}button{overflow:visible}button,select{text-transform:none}button,[type=button],[type=reset],[type=submit],[role=button]{cursor:pointer}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button;-moz-appearance:button;appearance:button}button,input,select,textarea{background-color:transparent;border-style:none}button:-moz-focusring,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{outline:1px dotted ButtonText}select{-webkit-appearance:none;-moz-appearance:none;appearance:none}a:focus,button:focus,input:focus,select:focus,textarea:focus{outline-width:0}select::-ms-expand{display:none}select::-ms-value{color:currentcolor}legend{border:0;color:inherit;display:table;white-space:normal;max-width:100%}::-webkit-file-upload-button{-webkit-appearance:button;-moz-appearance:button;appearance:button;color:inherit;font:inherit}[disabled]{cursor:default}img{border-style:none}progress{vertical-align:baseline}[aria-busy=true]{cursor:progress}[aria-controls]{cursor:pointer}[aria-disabled=true]{cursor:default}ul,ol{list-style-type:none}figure{margin:0}.guard-popup{font-family:FigtreeVF,sans-serif;position:fixed;z-index:2147483638;top:8px;left:24px;overflow:visible;color:#222e3a;background-color:#fff;max-width:416px;width:calc(100% - 48px);border-radius:16px;box-shadow:0 4px 20px #00000040;padding:24px}.guard-popup__header{display:flex;justify-content:space-between;align-items:center;column-gap:16px;margin-bottom:24px}.guard-popup__close{display:flex;align-items:center;justify-content:center;width:24px;height:24px;opacity:.7}.guard-popup__img{line-height:0;margin-bottom:24px}.guard-popup__img img{width:100%;aspect-ratio:368/142;object-fit:cover;border-radius:12px;overflow:hidden}.guard-popup__title{font-size:24px;line-height:32px;margin-bottom:8px}.guard-popup__description{font-size:20px;line-height:28px;font-weight:500;color:#4a5764;margin-bottom:28px}.guard-popup__actions{display:flex;justify-content:flex-end;column-gap:16px}.guard-popup__btn{display:flex;align-items:center;justify-content:center;padding:8px 16px;border-radius:5px;font-size:16px;line-height:24px;font-weight:700;cursor:pointer;color:#fff;background:linear-gradient(180deg,#5695fd,#1554ff)}</style></template><style>@font-face{font-family:FigtreeVF;src:url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"),url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");font-weight:100 1000;font-display:swap}</style></veepn-guard-alert></body></html>
